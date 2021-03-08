@@ -3,10 +3,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {HashRouter as Router} from 'react-router-dom';
+import {AuthProvider} from './Context/AuthContext'
+import {PostProvider} from './Context/PostContext'
+import {GoalProvider} from './Context/GoalContext'
+import {TagProvider} from './Context/TagContext'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <AuthProvider>
+        <PostProvider>
+          <GoalProvider>
+            <TagProvider>
+            <App />
+            </TagProvider>
+          </GoalProvider>
+        </PostProvider>
+      </AuthProvider>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

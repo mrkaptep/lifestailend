@@ -1,73 +1,119 @@
 # lifestailend
 
-# Getting Started with Create React App
+lifestailend.com
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<hr/>
 
-## Available Scripts
+MVP
 
-In the project directory, you can run:
+- users can create an account
+- users can login
+- user can create a post
+- user can delete a post
+- user can update a post
+- user can read all posts
+- have a tailend chart
 
-### `npm start`
+ICEBOX
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- user can set goals
+- user can see what goals they have completed
+- user can see a chart that will project how much time they will spend on it based off the last 3 months worth of data
+- user can click on history and they can filter by the tags to see what they have posted off that tag
+- users can up/down vote comments
+- connect photos to google photos
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## DB
 
-### `npm test`
+CREATE TABLE tailend_users (
+id SERIAL PRIMARY KEY,
+username VARCHAR(100) NOT NULL,
+password VARCHAR(100) NOT NULL,
+email VARCHAR(100) NOT NULL
+);
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+CREATE TABLE tailend_posts (
+post_id SERIAL PRIMARY KEY,
+title VARCHAR(45) NOT NULL,
+tag VARCHAR(100) REFERENCES tailend_tag(id),
+content TEXT,
+img TEXT,
+author_id INTEGER REFERENCES tailend_users(id),
+date_created TIMESTAMP
+)
 
-### `npm run build`
+CREATE TABLE tailend_tags (
+id SERIAL PRIMARY KEY,
+tag VARCHAR(100)
+)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+CREATE TABLE tailend_goals (
+goal_id SERIAL PRIMARY KEY,
+author_id INTEGER REFERENCES tailend_users(id),
+date_created TIMESTAMP,
+title VARCHAR(100) NOT NULL,
+content TEXT,
+time_table INTEGER
+)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## SERVER
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Dependencies:
 
-### `npm run eject`
+  - massive (for connecting to our postgreSQL db)
+  - express (for writing RESTful funcitonality)
+  - express-session (for initializing a session for each user)
+  - bcrypt (for hashing passwords for authentication)
+  - dotenv (to access environmental variables that are in our .gitignore)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- File Structure:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  - server/
+    - index.js
+    - controllers/
+      - post.js
+      - user.js
+      - goals.js
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Endpoints:
+  - register => `/auth/register`
+  - login => `/auth/login`
+  - logout => `/auth/logout`
+  - getUserSession => `/auth/get_user`
+  - getPosts => `/api/posts`
+  - deletePost => `/api/posts/:id`
+  - editPost => `/api/posts/:id`
+  - addPost => `/api/posts`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## FRONTEND
 
-## Learn More
+- Dependencies:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  - axios
+  - react context
+  - fontAwesome
+  - react-router-dom
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- File Structure:
+  - src/
+    - App.js
+    - reset.css
+    - routes.js
+    - Context/
+      - AuthContext.js
+      - PostContext.js
+      - GoalContext.js
+    - components/
+      - Header.js
+      - Auth.js
+      - Form.js
+      - Main.js
+      - Goals.js
+      - History.js
 
-### Code Splitting
+## Technologies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# lifestailend
+- NodeMailer
+- Twilio
+- Sass
+- ChartJs

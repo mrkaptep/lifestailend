@@ -1,0 +1,35 @@
+.chartContainer {
+   width: 95vw;
+	height: 300px;
+   display: flex;
+	margin-top: 20px;
+}
+.chart {
+   display: inline-flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	align-content: center;
+   margin: 0 20px 0 20px;
+}
+.text {
+	width: 65vw;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	margin: 20px;
+}
+.chart2 {
+	width: 45vw;
+   margin: 20px;
+   display: inline-flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	align-content: center;
+
+}
