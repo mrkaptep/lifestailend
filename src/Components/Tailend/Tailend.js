@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Bar} from 'react-chartjs-2';
+import './Tailend.scss'
 
 
 const Tailend = (props) => {
@@ -25,7 +26,6 @@ const Tailend = (props) => {
    });
 
    const [barOptions, setBarOptions] = useState({
-      responsive: true,
       maintainAspectRatio: false,
       scales: {
          yAxes: [
@@ -38,7 +38,7 @@ const Tailend = (props) => {
       },
       title: {
          display: true,
-         text: "Life's Tailend",
+         text: "Life's Tailend in Years",
          fontSize: 25
       },
       legend: {
@@ -56,7 +56,7 @@ const Tailend = (props) => {
                   lifeExpect-age,
                   age,
                   0,
-                  90
+                  lifeExpect
             ],
             backgroundColor: [
                   'rgba(255, 99, 132, 0.6)',
@@ -69,18 +69,28 @@ const Tailend = (props) => {
    }, [age, lifeExpect])
 
    return(
-      <div>
+      <div className="tailendComp">
          <Bar
             data={barData}
-            options={barOptions} />
-            <div>
-               <span>Enter Age:  </span>
-               <input value={age} onChange={(e) => setAge(+e.target.value)}/>
-            </div>
-            <div>
-               <span>Life Expectancy:  </span>
-               <input value={lifeExpect} onChange={(e) => setLifeExpet(+e.target.value)}/>
-            </div>
+            options={barOptions} 
+         />
+         <div className="inputText">
+            <span className="inputTitle">
+               Enter Age:  
+            </span>
+            <input value={age} onChange={(e) => setAge(+e.target.value)}/>
+         </div>
+         <div className="inputText">
+            <span className="inputTitle">
+               Life Expectancy:  
+            </span>
+            <input value={lifeExpect} onChange={(e) => setLifeExpet(+e.target.value)}/>
+         </div>
+         <div className="tailText">
+            <i>
+               {lifeExpect - age} Years Left
+            </i>
+         </div>
       </div>
    )
 

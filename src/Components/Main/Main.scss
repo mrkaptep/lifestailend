@@ -1,0 +1,72 @@
+$logofont: 'Permanent Marker', cursive;
+$fontMont: 'Montserrat', sans-serif;
+$bgc: #2f4353;
+$bgcolor2: #5da2db;
+$bgInputColor: whitesmoke;
+
+.mainComp{
+   display: flex;
+}
+// .sideBar{
+//    width: 14vw;
+//    height: 100vw;
+//    border-right: 5px solid red;
+// }
+.mainBar {
+   margin-top: 14vh;
+   width: 14vw;
+   height: 100vw;
+   display: flexbox;
+   margin-left: 10px;
+   
+}
+.sidemenu{
+   position:fixed;
+   flex-direction: column;
+   margin: 30px 0 0 20px;
+   border: 2px solid $bgc;
+   border-color: $bgc;
+   border-radius: 5%;
+   width: 14vw;
+   height: 400px;
+}
+
+.mainNav{
+   display: flex;
+   flex: 1;
+   flex-direction: column;
+   justify-content: flex-start;
+	align-items: flex-start;
+   border:none;
+   color: $bgc;
+   background-color: white;
+   text-shadow: 2px 2px 4px #888686;
+   font-family: 'Permanent Marker';
+   font-size: 28px;
+   margin-left: 15px;
+}
+.mainNav:hover {
+   color: black;
+}
+.mainNav2{
+   display: flex;
+   flex: 1;
+   flex-direction: column;
+   justify-content: flex-start;
+	align-items: flex-start;
+   border:none;
+   color: $bgc;
+   background-color: white;
+   text-shadow: 2px 2px 4px #888686;
+   font-family: 'Permanent Marker';
+   font-size: 24px;
+   margin-top: -15px;
+   margin-left: 24px;
+}
+.mainNav2:hover {
+   color: black;
+}
+
+.mainContainer{
+   margin: 100px 0 0 120px;
+}

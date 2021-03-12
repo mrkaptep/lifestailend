@@ -29,7 +29,7 @@
   justify-content: flex-end;
   align-items: center;
   flex: 1;
-  margin-right: 20px;
+  margin-right: 8px;
 }
 
 .buttonAuth {
@@ -42,6 +42,7 @@
   text-shadow: 2px 2px 4px #000000;
   font-family: 'Permanent Marker';
   font-size: 20px;
+  margin-right: 13px;
 }
 
 .buttonAuth:hover {
@@ -51,12 +52,33 @@
 .loginVisibiltyLocation {
   position: fixed;
   top: 8%;
-  left: 58%;
+  left: 59.3%;
 }
 
 .regVisibiltyLocation {
   position: fixed;
   top: 8%;
-  left: 67.5%;
+  left: 69.5%;
+}
+
+.logout {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+  margin-right: 8px;
+}
+
+.logoutButton {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #2f4353;
+  border: none;
+  color: whitesmoke;
+  text-shadow: 2px 2px 4px #000000;
+  font-family: 'Permanent Marker';
+  font-size: 20px;
+  margin-right: 13px;
 }
 /*# sourceMappingURL=Header.css.map */

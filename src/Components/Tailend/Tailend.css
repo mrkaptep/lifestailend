@@ -1,1 +1,28 @@
-/* No CSS *//*# sourceMappingURL=Tailend.css.map */
+.tailendComp {
+  margin-left: 20px;
+  height: 260px;
+}
+
+.tailText {
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 14px;
+}
+
+.inputText {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.barText {
+  font-family: "Montserrat", sans-serif;
+  margin-left: 20px;
+}
+
+.inputTitle {
+  margin-right: 7px;
+}
+/*# sourceMappingURL=Tailend.css.map */

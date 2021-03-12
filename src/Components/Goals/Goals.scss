@@ -1,0 +1,124 @@
+$bgc: #2f4353;
+$bgcolor2: #5da2db;
+$fontcolor: whitesmoke;
+$fontMont: 'Montserrat', sans-serif;
+$logofont: 'Permanent Marker', cursive;
+$bgInputColor: whitesmoke;
+
+
+.goalTemp{
+   display: flex;
+   background-color: $bgcolor2;
+   width: 455px;
+   margin: 30px 20px 1px 30px;
+   border-radius: 10px;
+   box-shadow: 3px 3px 6px #000000;;
+}
+.textForm{
+   width: 380px;
+   margin: 30px 30px 30px 35px;
+   display: flex;
+   flex-direction: column;
+}
+.space{
+   width: 380px;
+   height: 15px;
+   border-color: $bgcolor2;
+}
+.space2{
+   width: 160px;
+   border-color: $bgcolor2;
+}
+
+.goalId{
+   background-color: $bgInputColor;
+   width: 150px;
+   height: 25px;
+   border-radius: 5px;
+   display: flex;
+   align-items: center;
+   padding-left: 8px;
+}
+.dateSet{
+   background-color: $bgInputColor; 
+   width: 150px;
+   height: 30px;
+   display: flex;
+   align-items: center;
+   padding-left: 8px;
+   border-radius: 5px;
+   
+}
+.goalDateBox {
+   display: inline-flex;
+}
+.dateTarget{
+   background-color: $bgInputColor; 
+   width: 120px;
+   height: 30px;
+   display: flex;
+   margin-right: -6px;
+   justify-content: center;
+   align-items: center;
+   // padding-left: 8px;
+   border-radius: 5px;
+   font-size: 17px;
+}
+.goalCom{
+   background-color: $bgInputColor; 
+   width: 90px;
+   height: 30px;
+   display: flex;
+   align-items: center;
+   padding-left: 10px;
+   padding-right: 10px;
+   border-radius: 5px;
+   font-size: 17px;
+}
+
+.goalTitle{
+   background-color: $bgInputColor;
+   border-radius: 5px;
+   font-size: 22px;
+   font-weight: bold;
+   width: 378px;
+   height: 34px;
+   display: flex;
+   align-items: center;
+   padding-left: 8px;
+}
+.goalContent{
+   background-color: $bgInputColor;
+   width: 370px;
+   height: auto;
+   padding: 6px 8px;
+   border-radius: 5px;
+}
+
+.goalButton{
+   width: 140px;
+   margin-top: -8px;
+   margin-bottom: -8px;
+   margin-right: 15px;
+   display: flex;
+   justify-content: center;
+	align-items: center; 
+   background-color: $bgcolor2;
+   border:none;
+   color: whitesmoke;
+   text-shadow: 2px 2px 4px #000000;
+   font-family: 'Permanent Marker';
+   font-size: 34px;
+}
+
+.goalButton:hover {
+   color: silver;
+}
+.buttonBox{
+   display: inline-flex;
+   flex-direction: row;
+   justify-content: center;
+	align-items: center;
+   flex: 1;
+   margin-right: 5px;
+}

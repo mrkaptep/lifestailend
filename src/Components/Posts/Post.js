@@ -1,7 +1,7 @@
 import React, {useState, useContext, useEffect} from 'react';
 import {PostContext} from '../../Context/PostContext'
 import {AuthContext} from '../../Context/AuthContext'
-// import './Post.css';
+import './Post.scss';
 
 const Post = (props) => {
    const {post, setPost, getPosts, deletePost, addPost} = useContext(PostContext)
@@ -26,16 +26,39 @@ const Post = (props) => {
                {post.map((post, index) => {
                   const postDate = new Date (post.date_created)
                   return(
-                     <div key={index}>
-                        <div>Post ID: {post.post_id} </div>
-                        <div>Date: {postDate.getMonth()}/{postDate.getDate()}/{postDate.getFullYear()} </div>
-                        <div>Title: {post.title} </div>
-                        <div>Tags: {post.tags.map((tag, index)=> {return (
-                           <span key={index}>
-                              <span>{tag.tag}</span>
-                           </span>)})}</div>
-                        <div>Content: {post.content}</div>
-                        <button onClick={() => deletePost(post.post_id)}>delete</button>
+                     <div className="postTemp" key={index}>
+                        <div className='textForm'>
+                           {/* <div className="postId">Post ID: {post.post_id} 
+                           </div>
+                           <div className="space"></div> */}
+                           <div className="date">{postDate.getMonth()}/{postDate.getDate()}/{postDate.getFullYear()} 
+                           </div>
+                           <div className="space"></div>
+                           <div className="title">{post.title} 
+                           </div>
+                           <div className="space"></div>
+                           <div className="tags">
+                              {post.tags.map((tag, index)=>{
+                                 return (
+                                    <span key={index}>
+                                       <span className="tagme">{tag.tag}
+                                       </span>
+                                    </span>
+                                 )
+                              })}
+                           </div>
+                           <div className="space"></div>
+                           <div className="content">
+                              {post.content}
+                           </div>
+                           <div className="space2"></div>
+                           <button
+                              className="postButton"
+                              onClick={() => deletePost(post.post_id)}
+                           >
+                              delete
+                           </button>
+                        </div>
                      </div> 
                   )
                })}

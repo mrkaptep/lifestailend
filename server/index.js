@@ -3,7 +3,9 @@ const express = require('express');
 const session = require('express-session');
 const massive = require('massive');
 const morgan = require('morgan');
-const AWS = require("aws-sdk");
+const AWS = require('aws-sdk');
+const nodemailer = require('nodemailer');
+const path = require('path')
 
 //CONTROLLERS
 const authCtrl = require('./controllers/user');
@@ -12,6 +14,8 @@ const goalsCtrl = require('./controllers/goals');
 const tagsCtrl = require('./controllers/tags');
 const aws3Ctrl = require('./controllers/aws3')
 const photoCtrl = require('./controllers/photos')
+
+
 
 //MIDDLEWARE
 const app = express();
@@ -22,7 +26,7 @@ app.use(express.json());
 let {
     SERVER_PORT,
     CONNECTION_STRING,
-    SESSION_SECRET
+    SESSION_SECRET,
 } = process.env;
 
 app.use(
@@ -33,6 +37,7 @@ app.use(
         cookie: {maxAge: 1000 * 60 * 60 * 24}
     })
 );
+
 
 //DATABASE CONNECTION
 // function setupDB(){
@@ -82,3 +87,10 @@ app.get('/api/aws3', aws3Ctrl.aws3);
 app.post('/api/photo', photoCtrl.createPhotoPost);
 app.get('/api/photos', photoCtrl.getPhotos);
 app.delete('/api/photo/:id', photoCtrl.deletePhoto);
+
+
+app.use( express.static( `${__dirname}/../build`));
+
+app.get('*', (req,res)=> { 
+res.sendFile(path.join(__dirname, '../build/index.html')) 
+})

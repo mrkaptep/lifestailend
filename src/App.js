@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.scss';
+import './App.scss'
 import routes from './routes';
 import Header from './Components/Header/Header';
 

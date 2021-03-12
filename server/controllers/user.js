@@ -1,4 +1,11 @@
 const bcrypt = require('bcryptjs');
+const nodemailer = require('nodemailer');
+require('dotenv').config();
+
+let {
+    GMAIL_USER_NAME,
+    GMAIL_USER_PASSWORD
+} = process.env;
 
 module.exports = {
 
@@ -14,6 +21,26 @@ module.exports = {
         const[user] = await db.user.create_user(username, hash, email)
         delete user.password
         req.session.user = user
+        let transporter = nodemailer.createTransport({
+            service: "Gmail",
+            auth: {
+                user: GMAIL_USER_NAME,
+                pass: GMAIL_USER_PASSWORD
+            }
+        })
+        let mailOptions ={
+            from: GMAIL_USER_NAME,
+            to: email,
+            subject: "Welcome to Life's Tail End!",
+            text: "Welcome and Thank you for joining Life's Tail End. If you have any feedback or need support, pleases send us an email."
+        }
+        transporter.sendMail(mailOptions, function(err, data){
+            if (err) {
+                console.log(err)
+            } else {
+                console.log('email sent')
+            }
+        })
         return res.status(200).send(req.session.user)
     },
 

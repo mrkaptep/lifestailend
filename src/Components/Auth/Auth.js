@@ -18,7 +18,6 @@ const Auth = (props) => {
     const [email, setEmail] = useState("")
     const {login, register} = useContext(AuthContext)
     
-
         return (
             <div className="container">
                 <div className="form-box">

@@ -1,1 +1,79 @@
-/* No CSS *//*# sourceMappingURL=Post.css.map */
+.postTemp {
+  background-color: #5da2db;
+  width: 465px;
+  margin: 30px 20px 20px 30px;
+  display: flex;
+  border-radius: 10px;
+}
+
+.textForm {
+  width: 380px;
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.space {
+  width: 380px;
+  height: 12px;
+  border-color: #5da2db;
+}
+
+.postId {
+  background-color: whitesmoke;
+  width: 150px;
+  height: 25px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+}
+
+.date {
+  background-color: whitesmoke;
+  width: 150px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  border-radius: 5px;
+}
+
+.title {
+  background-color: whitesmoke;
+  border-radius: 5px;
+  width: 378px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+}
+
+.tags {
+  background-color: whitesmoke;
+  border-radius: 5px;
+  width: 378px;
+  height: 34px;
+  padding-left: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.tagme {
+  background-color: #5da2db;
+  border-radius: 5px;
+  margin-left: 8px;
+  padding: 4px;
+  width: 40vw;
+  height: 25px;
+  color: whitesmoke;
+}
+
+.content {
+  background-color: whitesmoke;
+  width: 370px;
+  height: auto;
+  padding: 6px 8px;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=Post.css.map */

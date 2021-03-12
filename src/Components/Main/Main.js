@@ -1,21 +1,37 @@
 import React, {useState, useContext} from 'react';
 import {AuthContext} from '../../Context/AuthContext';
 import axios from 'axios';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faPowerOff} from "@fortawesome/free-solid-svg-icons";
-// import './Main.css';
+import {Link} from "react-router-dom";
+import Post from '../Posts/Post'
+import './Main.scss';
 
-library.add(
-   faPowerOff,
-)
 
 const Main = (props) => {
    const {logout, getUser} = useContext(AuthContext)
+   const [postVisible, setPostVisible] = useState(false)
+   const [addPosit]
+   const [goalVisible, setGoalVisible] = useState(false) 
    return (
-      <div>
-         This is the Main component
-         <button onClick={() => logout()}><FontAwesomeIcon icon={["fa", "power-off"]}/></button>
+      <div className="mainComp">
+         <div className="mainBar">
+            <div className="sidemenu">
+               <button className="mainNav">Post</button>
+               <button className="mainNav2">- Add Post</button>
+               <button className="mainNav">Goals</button>
+               <button className="mainNav2">- Add Goal</button>
+               <button className="mainNav">Pictures</button>
+
+            </div>
+         </div>
+         <div className="mainContainer">
+            <Link to="/Home">Home</Link>
+            <Link to="/post">Post</Link>
+            <Link to="/goals">Goals</Link>
+            <Link to="/Uploads3">Upload S3</Link>
+            <div className="postComp">
+               <Post/>
+            </div>
+         </div>
       </div>
    )
 

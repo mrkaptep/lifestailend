@@ -1,8 +1,66 @@
-.chartContainer {
-   width: 95vw;
+$fontYanone: 'Yanone Kaffeesatz', sans-serif;
+$fontMont: 'Montserrat', sans-serif;
+
+.homeContainer{
+	margin-bottom: 20px;
+}
+.homeView{
+	margin-top: 14vh;
+}
+.imgBox{
+	width: 100vw;
+	height: 420px;
+	margin-left: 20px;
+	display: flex;
+}
+.lifeTextBox{
+	display: flex;
+	flex-direction: column;
+}
+.img{
 	height: 300px;
+}
+.lifeTailendText{
+	font-family: $fontMont;
+	font-size: 30px;
+	font-style: italic;
+	font-weight: bold;
+	margin: 80px 10px 0 20px;
+}
+.lifeTailendText2{
+	font-family: $fontMont;
+	font-size: 24px;
+	font-style: italic;
+	font-weight: bold;
+	margin: 90px 10px 50px 10px;
+}
+.tailendText{
+	font-family: $fontMont;
+	font-size: 28px;
+	margin: 10px 0 20px 20px;
+	padding-left: 30px;
+}
+.box{
+	display: inline-flex;
+	margin-left: 20px;
+}
+.box2{
+	display: inline-flex;
+	margin: 20px;
+}
+
+.chartContainer {
+   width: 98vw;
+	height: 380px;
    display: flex;
 	margin-top: 20px;
+}
+
+.chartContainer2 {
+   width: 98vw;
+	height: 460px;
+   display: flex;
+	margin-top: 10px;
 }
 .chart {
    display: inline-flex;
@@ -11,25 +69,43 @@
 	justify-content: space-around;
 	align-items: flex-start;
 	align-content: center;
-   margin: 0 20px 0 20px;
+   margin-left: 20px;
 }
-.text {
-	width: 65vw;
+.textContainer{
+	width: 48vw;
 	display: flex;
 	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: space-around;
-	align-items: flex-start;
-	margin: 20px;
+	margin: 40px 10px 0 20px;
+	padding-left: 30px;
+	flex: 1;
 }
-.chart2 {
-	width: 45vw;
-   margin: 20px;
-   display: inline-flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-around;
-	align-items: flex-start;
-	align-content: center;
+.text {
+margin-top: 20px;
+font-family: $fontMont;
+font-size: 18px;
+font-style: italic;
+}
 
+.textBox{
+	width: 45vw;
+	display: flex;
+	flex-direction: column;
+	margin: 10px 20px 0 20px;
+	padding-left: 30px;
+	flex: 1;
+}
+.chart2{
+	width: 49vw;
+}
+
+.takeaway{
+	margin: 20px 0 10px 10px;
+	font-family: $fontMont;
+	font-size: 24px;
+	font-style: italic;
+	font-weight: bold;
+}
+.takeawayText {
+	margin-bottom: 10px;
+	margin-left: 10px;
 }

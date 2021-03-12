@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Bar} from 'react-chartjs-2';
+import './Months.scss'
 
 
 const Months = (props) => {
@@ -27,7 +28,6 @@ const Months = (props) => {
    });
 
    const [barOptions, setBarOptions] = useState({
-      responsive: true,
       maintainAspectRatio: false,
       scales: {
          yAxes: [
@@ -41,7 +41,7 @@ const Months = (props) => {
       },
       title: {
          display: true,
-         text: 'Total Months',
+         text: 'Tail End in Months',
          fontSize: 25
       },
       legend: {
@@ -72,18 +72,23 @@ const Months = (props) => {
    }, [theAge, theLifeExpect])
 
    return(
-      <div>
+      <div className="monthComp">
          <Bar
             data={barData}
             options={barOptions} 
          />
-         <div>
-            <span>Enter Age:  </span>
+         <div className="inputText">
+            <span className="inputTitle">Enter Age:  </span>
             <input value={theAge} onChange={(e) => setTheAge(+e.target.value)}/>
          </div>
-         <div>
-            <span>Life Expectancy:  </span>
+         <div className="inputText">
+            <span  className="inputTitle">Life Expectancy:  </span>
             <input value={theLifeExpect} onChange={(e) => setTheLifeExpet(+e.target.value)}/>
+         </div>
+         <div className="monthText">
+            <i>
+               {monthsLeft} Months Left
+            </i>
          </div>
       </div>
    )

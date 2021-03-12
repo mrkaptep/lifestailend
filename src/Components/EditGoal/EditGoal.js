@@ -4,6 +4,7 @@ import {AuthContext} from '../../Context/AuthContext';
 import {useHistory, useParams, useLocation, useRouteMatch} from "react-router-dom";
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
+import './EditGoal.scss'
 
 const EditGoal = (props) => {
    const [title, setTitle] = useState("")
@@ -20,45 +21,64 @@ const EditGoal = (props) => {
       setTimeTable(new Date(goal.time_table))
    }, [])
 
-
+ 
    return (
       <div>
-         EDIT Goals component
          {user && (
-            <div>
-               <div>
-                  <input
-                     placeholder="Title"
-                     value={title}
-                     onChange={(e) => setTitle(e.target.value)}
-                  />
-               </div>
-               <div>
-                  <input
-                     placeholder="Content"
-                     value={content}
-                     onChange={(e) => setContent(e.target.value)}
-                  />   
-               </div>
-               <div>
-                  <DatePicker dateFormat="MMMM d, yyyy" 
-                     selected={timeTable} 
-                     onChange={date => setTimeTable(date)}
+            <div className="goalTemp">
+               <div className="textForm">
+                  <div className="space"></div>
+                  <div className="goalDateBox">
+                     <span className="goalCom">Target Date</span>
+                     <span className="space2"></span>
+                     <div className="datebox">
+                        <DatePicker 
+                           placeholder="Target Date"
+                           className="date"
+                           dateFormat="MMMM d, yyyy" 
+                           selected={timeTable} 
+                           onChange={date => setTimeTable(date)}
+                           />
+                     </div>
+                  </div>
+                  <div className="space"></div>
+                  <div className="titlebox">
+                     <input
+                        className="title"
+                        placeholder="Goal Title"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
                      />
+                  </div>
+                  <div className="space"></div>
+                  <div className="contentbox">
+                     <input
+                        className="content"
+                        multiline={true}
+                        placeholder="SMART Goal Details"
+                        value={content}
+                        onChange={(e) => setContent(e.target.value)}
+                     />   
+                  </div>
+                  <div className="space"></div>
+                  
+                  <button 
+                     className="button"
+                     onClick={() => {
+                        (
+                           goal.goal_id ?
+                           editGoal(goal.goal_id,{
+                              title,
+                              content,
+                              timeTable,
+                              goal_id:goal.goal_id
+                           }) :
+                           addGoal({title, content, timeTable})
+                        )
+                        push("/Goals")
+                     }
+                  }>Save</button>
                </div>
-               <button onClick={() => {
-                  (
-                     goal.goal_id ?
-                     editGoal(goal.goal_id,{
-                        title,
-                        content,
-                        timeTable,
-                        goal_id:goal.goal_id
-                     }) :
-                     addGoal({title, content, timeTable})
-                  )
-                  push("/Goals")
-               }}>Save</button>
             </div>
    
          )}
