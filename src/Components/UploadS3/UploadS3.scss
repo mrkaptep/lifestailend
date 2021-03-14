@@ -1,0 +1,73 @@
+$logofont: 'Permanent Marker', cursive;
+$fontMont: 'Montserrat', sans-serif;
+$bgc: #2f4353;
+$bgcolor2: #5da2db;
+$bgInputColor: whitesmoke;
+$textShadow1: #000000;
+$textShawdow2: #888686;
+$hoverColor1: silver;
+$hoverColor2:  #000000;
+$gradient-top: linear-gradient(0deg, #2A475Eff, #2A475Eff, #2A475Dff, #2B475Dff, #2B465Cff, #2B465Cff, #2B465Bff, #2B465Bff, #2C465Aff, #2C465Aff, #2C4559ff, #2C4559ff, #2D4559ff, #2D4558ff, #2D4558ff, #2D4557ff, #2D4457ff, #2E4456ff, #2E4456ff, #2E4455ff, #2E4455ff, #2E4454ff, #2F4354ff, #2F4353ff, #2F4353ff);
+$gradient-radial: radial-gradient(#1F4E73ff, #1E4F76ff, #1C5079ff, #1B517Dff, #195280ff, #185383ff, #165486ff);
+$gradient-bottom: linear-gradient(180deg, #1F4E73ff, #1E4F76ff, #1C5079ff, #1B517Dff, #195280ff, #185383ff, #165486ff);
+
+.aws3{
+   margin-top: 140px;
+   flex: 2;
+   flex-direction: column;
+   align-self: center;
+   background-color: $bgc;
+   background: $gradient-top;
+   width: 515px;
+   margin: 20px 20px 0 0;
+   border-radius: 10px;
+   box-shadow: 3px 3px 6px $textShadow1;
+}
+.addPicture{
+   display: flex;
+   background-color: white;
+   flex-direction: column;
+   width: 430px;
+   margin: 40px;
+}
+.preview{
+   flex-shrink: 1;
+   align-items: center;
+   background-color: white;
+   border-radius: 8px;
+      width: 100%;
+      height: auto;
+}
+
+// .addPicture{
+//    margin-top: 140px;
+// }
+
+// .addAWSNav{
+//    border:none;
+//    color: $bgc;
+//    margin-bottom: 4px;
+//    background-color: white;
+//    text-shadow: 2px 2px 4px $textShawdow2;
+//    font-family: 'Permanent Marker';
+//    font-size: 20px;
+//    height: 40px;
+// }
+.photoAddSpace2{
+   display: flex;
+   width: 430px;
+   height: 40px;
+   border-color: $bgc;
+}
+
+.fileInput{
+   height: 30px;
+   align-items: center;
+}
+
+.custom-file-upload {
+   border: 1px solid #ccc;
+   display: inline-block;
+   padding: 6px 12px;
+   cursor: pointer;
+}

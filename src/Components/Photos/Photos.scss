@@ -11,54 +11,66 @@ $gradient-top: linear-gradient(0deg, #2A475Eff, #2A475Eff, #2A475Dff, #2B475Dff,
 $gradient-radial: radial-gradient(#1F4E73ff, #1E4F76ff, #1C5079ff, #1B517Dff, #195280ff, #185383ff, #165486ff);
 $gradient-bottom: linear-gradient(180deg, #1F4E73ff, #1E4F76ff, #1C5079ff, #1B517Dff, #195280ff, #185383ff, #165486ff);
 
-.postMainContainer{
+.photoContainer{
    display: flex;
    flex: 2;
    flex-direction: column;
    align-self: center;
 }
-
-.postHeader{
+.photoHeader{
    font-family: $logofont;
    flex: 2;
    display: inline-flex;
 	justify-self: center;
    font-size:40px;
-   margin: 10px 0 10px 20px;
+   margin: 10px 0 -20px 20px;
    color: $bgc;
    text-shadow: 2px 2px 4px $textShawdow2;
 }
-.postHeaderText{
+.photoHeaderText{
    justify-content: flex-start;
    flex: 2;
    margin-right: 350px;
 }
-.addPostButtonBox{
+
+.addPhotoButtonBox{
    flex: auto;
    justify-content: flex-start;
    margin-right: 40px;
-   
 }
-.postNav{
-   // justify-content: flex-end;
-	// align-items: flex-start;
+
+.addPhotoNav{
    border:none;
    color: $bgc;
    background-color: white;
    text-shadow: 2px 2px 4px $textShawdow2;
    font-family: 'Permanent Marker';
    font-size: 28px;
-   // margin-left: 15px;
 }
-.postBox{
+.photoMapBox{
    display: flex;
    flex-direction: column;
    flex: 1;
    align-items: center;
 }
-.postTemp{
+.photoFormBox{
+   width: 430px;
+   margin: 40px;
+}
+
+.photoSpace{
+   width: 430px;
+   height: 20px;
+   border-color: $bgc;
+}
+.photoSpace2{
+   width: 430px;
+   height: 40px;
+   border-color: $bgc;
+}
+.awsPhoto{
    display: flex;
-   align-self: center;
+   flex-direction: column;
    // overflow-y: auto;
    background-color: $bgc;
    background: $gradient-top;
@@ -67,89 +79,32 @@ $gradient-bottom: linear-gradient(180deg, #1F4E73ff, #1E4F76ff, #1C5079ff, #1B51
    border-radius: 10px;
    box-shadow: 3px 3px 6px $textShadow1;
 }
-.textForm{
-   width: 430px;
-   margin: 40px;
-}
-
-.space{
-   width: 430px;
-   height: 12px;
-   border-color: $bgc;
-}
-.space2{
-   width: 430px;
-   height: 6px;
-   border-color: $bgc;
-}
-
-.date{
+.photoDate{
    display: flex;
+   align-items: center;
+   margin-left: 30px;
    background-color: $bgInputColor; 
    width: 150px;
    height: 30px;
-   align-items: center;
    padding-left: 8px;
    border-radius: 5px;
    font-size: 18px;
    font-weight: 500;
 }
-.postTitle{
+.photoLinkBox{
    background-color: $bgInputColor;
-   border-radius: 5px;
-   width: 428px;
-   height: 32px;
-   align-items: center;
-   padding-left: 8px;
-   font-size: 22px;
-   font-weight: bold;
-}
-.tags{
-   background-color: $bgInputColor;
-   border-radius: 5px;
-   width: 428px;
-   height: 34px;
-   padding-left: 8px;
    display: flex;
-   align-items: center;
-   
-}
-.tagme{
-   background-color: $bgc;
-   background: $gradient-top;
-   box-shadow: 3px 3px 6px $textShawdow2;
-   font-family: $fontMont;
-   border-radius: 5px;
-   margin-left: 8px;
-   padding: 4px;
-   height: 28px;
-   font-weight: 600;
-   color: $bgInputColor;
-}
-.postContent{
-   background-color: $bgInputColor;
-   width: 420px;
-   height: auto;
+   flex: 2;
+   margin-left: 90px;
+   width: 320px;
+   height: 320px;
    padding: 6px 8px;
    border-radius: 5px;
-
 }
-.postButton{
-   display: flex;
-   margin-top: -2px;
-   margin-bottom: -14px;
-   justify-content: center;
-	align-items: center; 
-   background-color: $bgc;
-   background: $gradient-top;
-   opacity: .9;
-   border:none;
-   color: $bgInputColor;
-   text-shadow: 2px 2px 4px $textShadow1;
-   font-family: 'Permanent Marker';
-   font-size: 34px;
-}
-
-.button:hover {
-   color: $hoverColor1;
+.imgPhoto{
+   flex-shrink: 1;
+   align-items: center;
+   border-radius: 8px;
+      width: 100%;
+      height: auto;
 }

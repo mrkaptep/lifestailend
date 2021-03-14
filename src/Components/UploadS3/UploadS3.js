@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { v4 as randomString } from "uuid";
-import { GridLoader } from 'react-spinners';
+import './UploadS3.scss'
+import {useHistory} from "react-router-dom";
+
+
 
 const UploadS3 = (props) => {
    const [url, changeURL] = useState();
+   const {push} = useHistory() 
 
    const getSignedRequest = () => {
       let file = document.getElementById("file").files[0];
@@ -44,27 +48,33 @@ const UploadS3 = (props) => {
       .catch(err => {
          console.log(err);
       });
+      push('/Main/Picture')
    };
 
-
+   
    return (
 
 
+      <div className="aws3">
+         <div className="photoAddSpace2"></div>
+         <div className="addPicture">
+            <div className="photoAddSpace2"></div>
+            <img src={url} className="preview" />
+            {/* <div>
 
-      <div className={props.className || ""}>
-         <form>
-            <img alt="" src={url} className="preview" />
+            </div> */}
             <input
+               className="addAWSNav"
                type="file"
                id="file"
                accept="image/png, image/jpeg"
                onChange={() => getSignedRequest()}
             />
+         </div> 
+         <div className="photoSpace2"></div>      
             <label htmlFor="file" className="fileInput">
-               Choose a file
             </label>
-
-         </form>
+            {/* <div className="photoAddSpace2"></div> */}
       </div>
    );
 }

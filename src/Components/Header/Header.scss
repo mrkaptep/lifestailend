@@ -2,34 +2,26 @@ $logofont: 'Permanent Marker', cursive;
 $fontMont: 'Montserrat', sans-serif;
 $bgc: #2f4353;
 $gradient-top: linear-gradient(0deg, #2A475Eff, #2A475Eff, #2A475Dff, #2B475Dff, #2B465Cff, #2B465Cff, #2B465Bff, #2B465Bff, #2C465Aff, #2C465Aff, #2C4559ff, #2C4559ff, #2D4559ff, #2D4558ff, #2D4558ff, #2D4557ff, #2D4457ff, #2E4456ff, #2E4456ff, #2E4455ff, #2E4455ff, #2E4454ff, #2F4354ff, #2F4353ff, #2F4353ff);
+$bgInputColor: whitesmoke;
+$textShadow1: #000000;
+$hoverColor1: silver;
 
 .header {
-   position: fixed;
-   width: 100vw;
+   display: flex;
+   flex: 1;
    height: 10vh;
    background-color: $bgc;
    background: $gradient-top;
-   display: inline-flex;
-   top: 0;
-   left: 0;
-   right: 0;
+
 }
-.imgLogo {
-   display: flex;
-	align-items: center;
-   height: 47px;
-   margin-left: 20px;
-   margin-top: 17px;
-}
+
 .logo {
    font-family: $logofont;
-   display: flex;
-   justify-content: flex-start;
-	align-items: center;
+	align-self: center;
    font-size:40px;
    margin-left: 20px;
-   color: whitesmoke;
-   text-shadow: 2px 2px 4px #000000;
+   color: $bgInputColor;
+   text-shadow: 2px 2px 4px $textShadow1;
 }
 
 .authNav{
@@ -45,14 +37,14 @@ $gradient-top: linear-gradient(0deg, #2A475Eff, #2A475Eff, #2A475Dff, #2B475Dff,
 	align-items: center; 
    background-color: $bgc;
    border:none;
-   color: whitesmoke;
-   text-shadow: 2px 2px 4px #000000;
+   color: $bgInputColor;
+   text-shadow: 2px 2px 4px $textShadow1;
    font-family: 'Permanent Marker';
    font-size: 20px;
    margin-right: 13px;
 }
 .buttonAuth:hover {
-   color: silver;
+   color: $hoverColor1;
 }
 
 .loginVisibiltyLocation{
@@ -80,8 +72,8 @@ $gradient-top: linear-gradient(0deg, #2A475Eff, #2A475Eff, #2A475Dff, #2B475Dff,
 	align-items: center; 
    background-color: $bgc;
    border:none;
-   color: whitesmoke;
-   text-shadow: 2px 2px 4px #000000;
+   color: $bgInputColor;
+   text-shadow: 2px 2px 4px $textShadow1;
    font-family: 'Permanent Marker';
    font-size: 20px;
    margin-right: 13px;

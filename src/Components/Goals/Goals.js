@@ -3,6 +3,19 @@ import{useHistory} from "react-router-dom";
 import {GoalContext} from '../../Context/GoalContext'
 import {AuthContext} from '../../Context/AuthContext'
 import './Goals.scss'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faUserCircle, faUser, faLock, faEnvelope, faHome, faPlus } from "@fortawesome/free-solid-svg-icons";
+
+
+library.add(
+   faUserCircle,
+   faUser,
+   faLock,
+   faEnvelope,
+   faHome,
+   faPlus
+)
 
 const Goals = (props) => {
    const {goals, getGoals, deleteGoal, addGoal, editGoal, getGoal} = useContext(GoalContext)
@@ -17,38 +30,42 @@ const Goals = (props) => {
    }, [])
 
    return (
-      <div>
-         Goals component
-
-         {user && (
-
-            <div className='goal content-box'>
-               <div> 
-                  <button onClick={() => push("/Goals/Edit")}>Add Goal</button>
-               </div>
+      <div className="goalMainContainer">
+         <div className="goalsHeader">
+            <div className="goalHeaderText">
+               Goals
+            </div>
+            <div className="addGoalButtonBox">
+            <button
+                     className="editGoalNav"
+                     onClick={() => {
+                        push(`/Main/Goals/Edit`)}
+                     }
+                  >
+                     <FontAwesomeIcon icon={["fa", "plus"]}/>  New Goal
+                  </button>
+            </div>
+         </div>
+            <div className='goalBox'>
                {goals.map((goal, index) =>{
                   const newDate = new Date (goal.time_table)
                   const dateNew = new Date (goal.date_created)
                   return(
                      <div className="goalTemp" key={index}>
-                        <div className='textForm'>
-                           {/* <div className="goalId">Goal ID: {goal.goal_id} </div>
-                           <div className="space"></div> */}
-                           {/* <div className="dateSet">{dateNew.getMonth()}/{dateNew.getDate()}/{dateNew.getFullYear()} </div>
-                           <div className="space"></div> */}
-                           <div className="space"></div>
+                        <div className='goalTextForm'>
+                           {/* <div className="space"></div> */}
                            <div className="goalDateBox">
-                              <span className="goalCom">Target</span>
-                              <span className="space2"></span>
+                              <span className="goalCom">Target Date</span>
+                              <span className="goalSpace2"></span>
                               <div className="dateTarget">
                                  {newDate.getMonth()}/{newDate.getDate()}/{newDate.getFullYear()}
                               </div>
                            </div>
-                           <div className="space"></div>
+                           <div className="goalSpace"></div>
                            <div className="goalTitle">{goal.title} </div>
-                           <div className="space"></div>
+                           <div className="goalSpace"></div>
                            <div className="goalContent">{goal.content}</div>
-                           <div className="space"></div>
+                           <div className="goalSpace"></div>
                            <div className="buttonBox">
                               <button 
                                  className="goalButton"
@@ -56,7 +73,7 @@ const Goals = (props) => {
                               <button
                                  className="goalButton"
                                  onClick={() =>{
-                                 push(`/Goals/Edit/${goal.goal_id}`)
+                                 push(`/Main/Goals/Edit/${goal.goal_id}`)
                               }
                               }>edit</button>
                            </div>
@@ -65,8 +82,6 @@ const Goals = (props) => {
                   )   
                })}
             </div>
-         )
-         }
       </div>
       
    )

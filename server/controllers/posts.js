@@ -26,7 +26,8 @@ module.exports = {
                tailend_tags.tag
                FROM tailend_posts
                JOIN post_tags on tailend_posts.post_id = post_tags.post_id
-               JOIN tailend_tags on tailend_tags.tag_id = post_tags.tag_id`,
+               JOIN tailend_tags on tailend_tags.tag_id = post_tags.tag_id
+               ORDER BY COUNT(tailend_posts.post_id) DESC`,
                [],
                {
                   decompose: {

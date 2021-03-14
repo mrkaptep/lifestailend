@@ -23,65 +23,66 @@ const EditGoal = (props) => {
 
  
    return (
-      <div>
-         {user && (
-            <div className="goalTemp">
-               <div className="textForm">
-                  <div className="space"></div>
-                  <div className="goalDateBox">
-                     <span className="goalCom">Target Date</span>
-                     <span className="space2"></span>
-                     <div className="datebox">
-                        <DatePicker 
-                           placeholder="Target Date"
-                           className="date"
-                           dateFormat="MMMM d, yyyy" 
-                           selected={timeTable} 
-                           onChange={date => setTimeTable(date)}
-                           />
-                     </div>
+      <div className="editFormBox">
+         <div className="editGoalHeader">
+            Edit Goal
+         </div>
+         <div className="editGoalTemp">
+            <div className="editTextForm">
+               <div className="space"></div>
+               <div className="editGoalDateBox">
+                  <span className="editGoalCom">Target Date</span>
+                  <span className="space2"></span>
+                  <div className="editDatePickerbox">
+                     <DatePicker 
+                        placeholder="Target Date"
+                        className="editDate"
+                        dateFormat="MMMM d, yyyy" 
+                        selected={timeTable} 
+                        onChange={date => setTimeTable(date)}
+                        />
                   </div>
-                  <div className="space"></div>
-                  <div className="titlebox">
-                     <input
-                        className="title"
-                        placeholder="Goal Title"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                     />
-                  </div>
-                  <div className="space"></div>
-                  <div className="contentbox">
-                     <input
-                        className="content"
-                        multiline={true}
-                        placeholder="SMART Goal Details"
-                        value={content}
-                        onChange={(e) => setContent(e.target.value)}
-                     />   
-                  </div>
-                  <div className="space"></div>
-                  
-                  <button 
-                     className="button"
-                     onClick={() => {
-                        (
-                           goal.goal_id ?
-                           editGoal(goal.goal_id,{
-                              title,
-                              content,
-                              timeTable,
-                              goal_id:goal.goal_id
-                           }) :
-                           addGoal({title, content, timeTable})
-                        )
-                        push("/Goals")
-                     }
-                  }>Save</button>
                </div>
+               <div className="space"></div>
+               <div className="editGoalTitlebox">
+                  <textarea
+                     className="editGoalTitle"
+                     placeholder="Goal Title"
+                     value={title}
+                     onChange={(e) => setTitle(e.target.value)}
+                  />
+               </div>
+               <div className="space"></div>
+               <div className="contentbox">
+                  <textarea
+                     className="editGoalContent"
+                     multiline={true}
+                     placeholder="SMART Goal Details"
+                     value={content}
+                     onChange={(e) => setContent(e.target.value)}
+                  />   
+               </div>
+               <div className="space"></div>
+               
+               <button 
+                  className="editGoalButton"
+                  onClick={() => {
+                     (
+                        goal.goal_id ?
+                        editGoal(goal.goal_id,{
+                           title,
+                           content,
+                           timeTable,
+                           goal_id:goal.goal_id
+                        }) :
+                        addGoal({title, content, timeTable})
+                     )
+                     push("/Main/Goals")
+                  }
+               }>Save</button>
             </div>
+         </div>
    
-         )}
       </div>
    )
 

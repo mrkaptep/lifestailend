@@ -3,70 +3,78 @@ $fontMont: 'Montserrat', sans-serif;
 $bgc: #2f4353;
 $bgcolor2: #5da2db;
 $bgInputColor: whitesmoke;
+$textShadow1: #000000;
+$textShawdow2: #888686;
+$hoverColor1: silver;
+$hoverColor2:  #000000;
 
 .mainComp{
    display: flex;
+   flex: 1;
+   overflow-y: auto;
+   // align-items: center;
 }
-// .sideBar{
-//    width: 14vw;
-//    height: 100vw;
-//    border-right: 5px solid red;
-// }
 .mainBar {
-   margin-top: 14vh;
-   width: 14vw;
-   height: 100vw;
+   margin-top: 40px;
+   width: 200px;
+   height: auto;
    display: flexbox;
-   margin-left: 10px;
+   margin-left: 30px;
    
 }
 .sidemenu{
    position:fixed;
+   height: 330px;
    flex-direction: column;
-   margin: 30px 0 0 20px;
+   margin-top: 30px;
    border: 2px solid $bgc;
    border-color: $bgc;
-   border-radius: 5%;
-   width: 14vw;
-   height: 400px;
+   border-radius: 10px;
+   width: 170px;
 }
 
 .mainNav{
-   display: flex;
-   flex: 1;
    flex-direction: column;
    justify-content: flex-start;
 	align-items: flex-start;
    border:none;
    color: $bgc;
    background-color: white;
-   text-shadow: 2px 2px 4px #888686;
+   text-shadow: 2px 2px 4px $textShawdow2;
    font-family: 'Permanent Marker';
    font-size: 28px;
    margin-left: 15px;
 }
 .mainNav:hover {
-   color: black;
+   color: $hoverColor2;
 }
+
 .mainNav2{
-   display: flex;
-   flex: 1;
    flex-direction: column;
    justify-content: flex-start;
 	align-items: flex-start;
    border:none;
    color: $bgc;
    background-color: white;
-   text-shadow: 2px 2px 4px #888686;
+   text-shadow: 2px 2px 4px $textShawdow2;
    font-family: 'Permanent Marker';
-   font-size: 24px;
-   margin-top: -15px;
-   margin-left: 24px;
-}
-.mainNav2:hover {
-   color: black;
+   font-size: 20px;
+   margin: -10px 0 -10px 30px;
 }
 
+.homeBox{
+   display: inline-flex;
+}
+
+
 .mainContainer{
-   margin: 100px 0 0 120px;
+   align-items: center;
+   overflow-y: auto;
+   padding-bottom: 20px;
+   flex: 1;
+}
+
+.adContainer{
+   margin: 140px 40px 0 0;
+   width: 300px;
 }

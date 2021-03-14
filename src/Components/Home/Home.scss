@@ -2,13 +2,13 @@ $fontYanone: 'Yanone Kaffeesatz', sans-serif;
 $fontMont: 'Montserrat', sans-serif;
 
 .homeContainer{
-	margin-bottom: 20px;
+	overflow: auto;
 }
 .homeView{
-	margin-top: 14vh;
+	margin-top: 30px;
 }
 .imgBox{
-	width: 100vw;
+	flex: 1;
 	height: 420px;
 	margin-left: 20px;
 	display: flex;
@@ -25,14 +25,14 @@ $fontMont: 'Montserrat', sans-serif;
 	font-size: 30px;
 	font-style: italic;
 	font-weight: bold;
-	margin: 80px 10px 0 20px;
+	margin: 60px 10px 0 20px;
 }
 .lifeTailendText2{
 	font-family: $fontMont;
 	font-size: 24px;
 	font-style: italic;
 	font-weight: bold;
-	margin: 90px 10px 50px 10px;
+	margin: 90px 20px 50px 10px;
 }
 .tailendText{
 	font-family: $fontMont;
@@ -50,20 +50,19 @@ $fontMont: 'Montserrat', sans-serif;
 }
 
 .chartContainer {
-   width: 98vw;
+   flex: 1;
+	display: inline-flex;
 	height: 380px;
-   display: flex;
 	margin-top: 20px;
 }
 
 .chartContainer2 {
-   width: 98vw;
+   flex: 1;
+	display: inline-flex;
 	height: 460px;
-   display: flex;
 	margin-top: 10px;
 }
 .chart {
-   display: inline-flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: space-around;
@@ -72,7 +71,7 @@ $fontMont: 'Montserrat', sans-serif;
    margin-left: 20px;
 }
 .textContainer{
-	width: 48vw;
+	flex: 2;
 	display: flex;
 	flex-direction: column;
 	margin: 40px 10px 0 20px;
@@ -87,15 +86,14 @@ font-style: italic;
 }
 
 .textBox{
-	width: 45vw;
+	flex: 2;
 	display: flex;
 	flex-direction: column;
 	margin: 10px 20px 0 20px;
 	padding-left: 30px;
-	flex: 1;
 }
 .chart2{
-	width: 49vw;
+	flex: 2;
 }
 
 .takeaway{
