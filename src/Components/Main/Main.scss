@@ -24,8 +24,9 @@ $hoverColor2:  #000000;
 }
 .sidemenu{
    position:fixed;
-   height: 330px;
-   flex-direction: column;
+   height: 220px;
+      padding-top: 30px;
+   flex-direction: row;
    margin-top: 30px;
    border: 2px solid $bgc;
    border-color: $bgc;
@@ -62,9 +63,6 @@ $hoverColor2:  #000000;
    margin: -10px 0 -10px 30px;
 }
 
-.homeBox{
-   display: inline-flex;
-}
 
 
 .mainContainer{
@@ -77,4 +75,103 @@ $hoverColor2:  #000000;
 .adContainer{
    margin: 140px 40px 0 0;
    width: 300px;
+}
+
+@media all and (min-width: 601px) and (max-width:1000px) {
+   .mainComp{
+      display: flex;
+      width: 100%;
+      overflow-y: auto;
+      height: auto;
+      padding-bottom: 30px;
+   }
+   .sidemenu{
+      position:fixed;
+      height: 190px;
+      padding-top: 30px;
+      flex-direction: column;
+      margin-top: 30px;
+      border: 2px solid $bgc;
+      border-color: $bgc;
+      border-radius: 10px;
+      width: 170px;
+   }
+   .mainBar {
+      margin-top: 40px;
+      width: 220px;
+      height: auto;
+      display: flexbox;
+      margin-left: 20px;
+      
+   }
+   
+   .mainNav{
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      border:none;
+      color: $bgc;
+      background-color: white;
+      text-shadow: 2px 2px 4px $textShawdow2;
+      font-family: 'Permanent Marker';
+      font-size: 24px;
+      margin-left: 15px;
+   }
+
+   .adContainer{
+      display: none;
+   }
+}
+
+@media all and (max-width: 580px) {
+   .mainComp{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      overflow-y: auto;
+      height: auto;
+      padding-bottom: 30px;
+   }
+   .mainBar {
+      display: flex;
+      margin: 10px 10px 0 0;
+      display: inline-flex;
+      align-items: center;
+      width: 350px;
+      height: 80px;
+      z-index: 1;
+      
+   }
+   .sidemenu{
+      display: inline-flex;
+      align-items: center;
+      height: 20px;
+      width: 300px;
+      margin-top: 10px;
+      border: 2px solid $bgc;
+      border-color: $bgc;
+      border-radius: 10px;
+      background-color: white;
+
+   }
+   
+   .mainNav{
+      flex-direction: row;
+      align-content: center;
+      align-items: center;
+      border:none;
+      color: $bgc;
+      background-color: white;
+      text-shadow: 2px 2px 4px $textShawdow2;
+      font-family: 'Permanent Marker';
+      font-size: 17px;
+      margin-top: -30px;
+      margin-left: 6px;
+      margin-right: 4px;
+   }
+
+   .adContainer{
+      display: none;
+   }
 }

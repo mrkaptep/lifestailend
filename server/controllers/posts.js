@@ -22,12 +22,14 @@ module.exports = {
                tailend_posts.date_created,
                tailend_posts.title,
                tailend_posts.content,
+               post_tags.post_tag_id,
                post_tags.tag_id,
                tailend_tags.tag
                FROM tailend_posts
+               
                JOIN post_tags on tailend_posts.post_id = post_tags.post_id
                JOIN tailend_tags on tailend_tags.tag_id = post_tags.tag_id
-               ORDER BY COUNT(tailend_posts.post_id) DESC`,
+               ORDER BY tailend_posts.post_id DESC `,
                [],
                {
                   decompose: {
@@ -35,10 +37,10 @@ module.exports = {
                      columns: ['post_id','author_id','date_created','title','content'],
                      tags: {
                            pk: 'tag_id',
-                           columns: { tag_id: 'tag_id', tag: 'tag' }
+                           columns: { post_tag_id: 'post_tag_id', tag_id: 'tag_id', tag: 'tag' }
                      }
                   }
-               } 
+               }
             ).then((posts) => {
                res.status(200).send(posts)
             })
@@ -54,8 +56,7 @@ module.exports = {
 
    getPosts: (req, res) => {
       const db = req.app.get('db')
-      // db.post.get_posts().then((posts) => {
-      //    res.status(200).send(posts)
+      const searchString = `WHERE tailend_posts.title LIKE '${req.query.search}%'`
       db.query(
          `SELECT 
          tailend_posts.post_id,
@@ -63,19 +64,22 @@ module.exports = {
          tailend_posts.date_created,
          tailend_posts.title,
          tailend_posts.content,
+         post_tags.post_tag_id,
          post_tags.tag_id,
          tailend_tags.tag
          FROM tailend_posts
          JOIN post_tags on tailend_posts.post_id = post_tags.post_id
-         JOIN tailend_tags on tailend_tags.tag_id = post_tags.tag_id`,
+         JOIN tailend_tags on tailend_tags.tag_id = post_tags.tag_id
+         ${req.query?.search ? searchString: ''}
+         ORDER BY tailend_posts.post_id DESC `,
          [],
          {
             decompose: {
                pk: 'post_id',
                columns: ['post_id','author_id','date_created','title','content'],
                tags: {
-                     pk: 'tag_id',
-                     columns: { tag_id: 'tag_id', tag: 'tag' }
+                  pk: 'tag_id',
+                  columns: { post_tag_id: 'post_tag_id', tag_id: 'tag_id', tag: 'tag' }
                }
             }
          }
@@ -85,7 +89,10 @@ module.exports = {
    },
 
    deletePost: (req, res) => {
-      req.app.get('db').post.delete_post(req.params.id)
+      Promise.all([
+         req.app.get('db').post.delete_post_tags_by_post_id(req.params.id),
+         req.app.get('db').post.delete_post(req.params.id)
+      ])
       .then(_ => res.sendStatus(200))
    }
 }

@@ -1,7 +1,7 @@
 $bgc: #2f4353;
 $fontcolor: whitesmoke;
 
-.form-box{
+.loginFormBox{
    width:300px;
    height:185px;
    background-color: $bgc;
@@ -14,7 +14,7 @@ $fontcolor: whitesmoke;
    z-index: -1;
 }
 
-.body-form {
+.loginBodyForm {
    width:300px;
    margin-top: 35px;
    display: flex;
@@ -22,7 +22,7 @@ $fontcolor: whitesmoke;
 	justify-content: space-around;
 	align-items: center;
 }
-.login-group {
+.loginGroup {
    display: flex;
    margin-top: 14px; 
 }
@@ -38,14 +38,14 @@ $fontcolor: whitesmoke;
    border-radius:10%;
 }
 
-.buttonGroup{
+.loginButtonGroup{
    flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: space-around;
 	align-items: center;
    flex: 1;
 }
-button{
+.loginButton{
    margin-top: 18px;
    margin-bottom: 18px;
    color: $bgc;
@@ -53,4 +53,38 @@ button{
 }
 .register {
    margin-left: 20px;
+}
+
+@media all and (max-width:580px) {
+   .loginFormBox{
+      width:250px;
+      height:148px;
+      background-color: $bgc;
+      /* padding:20px; */
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      flex-shrink: 1;
+      border-radius:2%;
+      opacity: .95;
+      z-index: -1;
+   }
+   .loginBodyForm {
+      width:250px;
+      margin-top: 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+   }
+   .loginGroup {
+      display: flex;
+      margin-top: 8px; 
+   }
+   .loginButton{
+      margin-top: 10px;
+      margin-bottom: 10px;
+      color: $bgc;
+      font-size: 14px;
+   }
 }

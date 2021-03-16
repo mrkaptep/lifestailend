@@ -2,6 +2,9 @@ import React, {useState, useEffect} from 'react';
 import {Bar} from 'react-chartjs-2';
 import './Tailend.scss'
 
+//react chart js has a resize bug. When you resize browser the height grows indefinetly. 
+//https://github.com/reactchartjs/react-chartjs-2/issues/334
+
 
 const Tailend = (props) => {
    const [age, setAge] = useState(34)

@@ -111,3 +111,176 @@ $gradient-bottom: linear-gradient(180deg, #1F4E73ff, #1E4F76ff, #1C5079ff, #1B51
 .addPostButton:hover {
    color: silver;
 }
+
+@media all and (min-width: 601px) and (max-width:1000px) {
+
+   .addPostHeader{
+      font-family: $logofont;
+      flex: 2;
+      display: flex;
+      justify-self: center;
+      font-size:30px;
+      margin: 80px 0 24px 10px;
+   }
+   .addPostContainer{
+      display: flex;
+   align-self: center;
+   background-color: $bgc;
+   background: $gradient-top;
+   width: 415px;
+   margin: 20px 20px 0 10px;
+   }
+   .addPostBox{
+      width: 430px;
+      margin: 40px;
+      display: flex;
+      flex-direction: column;
+   }
+   .addPostSpace{
+      width: 330px;
+      height: 12px;
+      border-color: $bgcolor2;
+   }
+   .addPostSpace2{
+      width: 330px;
+      height: 6px;
+      border-color: $bgcolor2;
+   }
+   
+   .addPostTitle{
+      background-color: $bgInputColor;
+      border-radius: 5px;
+      width: 328px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      padding-left: 8px;
+      font-size: 22px;
+      font-weight: bold;
+   }
+   .addPostInput{
+      width: 320px;
+      height: auto;
+      font-family: $fontMont;
+      font-size: 20;
+      border-top-style: hidden;
+      border-right-style: hidden;
+      border-left-style: hidden;
+      border-bottom-style: hidden;
+      background-color: $bgInputColor;
+   }
+   .addPostTags{
+      background-color: $bgInputColor;
+      border-radius: 5px;
+      width: 328px;
+      height: 40px;
+      padding-left: 8px;
+      display: flex;
+      align-items: center;
+      
+   }
+   .tagSelect{
+      width: 334px;
+      margin-left: -7px;
+   }
+   .addPostContent{
+      background-color: $bgInputColor;
+      width: 320px;
+      height: auto;
+      padding: 6px 8px;
+      border-radius: 5px;
+   
+   }
+   .addPostButton{
+      display: flex;
+   margin-top: -2px;
+   margin-bottom: -14px;
+
+   justify-content: center;
+	align-items: center; 
+   font-size: 34px;
+   }
+}
+
+
+@media all and (max-width: 580px) {
+   .addPostHeader{
+      font-family: $logofont;
+      width: 300px;
+      font-size:24px;
+      margin-top: 30px;
+      margin-right: 10px;
+   }
+   .addPostContainer{
+      display: flex;
+      align-items: center;
+      width: 290px;
+      margin: 20px 20px 0 0;
+   }
+   .addPostBox{
+      width: 330px;
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+   }
+   .addPostSpace{
+      width: 215px;
+      height: 12px;
+   }
+   .addPostSpace2{
+      width: 215px;
+      height: 6px;
+      border-color: $bgcolor2;
+   }
+   
+   .addPostTitle{
+      width: 223px;
+      height: 28px;
+      align-items: center;
+      padding-left: 8px;
+      font-size: 19px;
+      font-weight: bold;
+   }
+   .addPostInput{
+      width: 213px;
+      height: auto;
+      font-family: $fontMont;
+      font-size: 20;
+      border-top-style: hidden;
+      border-right-style: hidden;
+      border-left-style: hidden;
+      border-bottom-style: hidden;
+      background-color: $bgInputColor;
+   }
+   .addPostTags{
+      background-color: $bgInputColor;
+      border-radius: 5px;
+      width: 223px;
+      height: 40px;
+      padding-left: 8px;
+      display: flex;
+      align-items: center;
+      
+   }
+   .tagSelect{
+      width: 233px;
+      margin-left: -7px;
+   }
+   .addPostContent{
+      background-color: $bgInputColor;
+      width: 215px;
+      height: auto;
+      padding: 6px 8px;
+      border-radius: 5px;
+   
+   }
+   .addPostButton{
+      display: flex;
+   margin-top: -2px;
+   margin-bottom: -14px;
+
+   justify-content: center;
+	align-items: center; 
+   font-size: 25px;
+   }
+}

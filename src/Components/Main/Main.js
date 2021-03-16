@@ -33,16 +33,14 @@ const Main = (props) => {
       <div className="mainComp">
          <div className="mainBar">
             <div className="sidemenu">
-               <div className="homebox">
-                  <button
-                     className="mainNav"
-                     onClick={() => {
-                        push(`/Main/Post`)}
-                     }
-                  >
-                   Home  {/* <FontAwesomeIcon icon={["fa", "home"]}/> */}
-                  </button>
-               </div>
+               <button
+                  className="mainNav"
+                  onClick={() => {
+                     push(`/Main/Post`)}
+                  }
+               >
+                  Home  {/* <FontAwesomeIcon icon={["fa", "home"]}/> */}
+               </button>
                <button 
                   className="mainNav"
                   onClick={() => {

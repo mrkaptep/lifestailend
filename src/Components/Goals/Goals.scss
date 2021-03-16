@@ -155,3 +155,240 @@ $gradient-bottom: linear-gradient(180deg, #1F4E73ff, #1E4F76ff, #1C5079ff, #1B51
    flex: 1;
    margin-right: 5px;
 }
+
+@media all and (min-width: 601px) and (max-width:1000px) {
+   .goalMainContainer{
+      display: flex;
+      width: 98%;
+      flex-direction: column;
+      align-self: center;
+   }
+   .goalsHeader{
+      font-family: $logofont;
+      flex: 2;
+      display: flex;
+      justify-self: center;
+      font-size:30px;
+      margin: 10px 0 10px 20px;
+   }
+   .goalHeaderText{
+      justify-content: flex-start;
+      flex: 2;
+      margin-right: 200px;
+   }
+   .addGoalButtonBox{
+      flex: auto;
+      justify-content: flex-start;
+      margin-right: 20px;
+      
+   }
+   .editGoalNav{
+      font-size: 22px;
+
+   }
+   .goalBox{
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      align-items: center;
+   }
+   .goalTemp{
+      display: flex;
+      align-self: center;
+      background-color: $bgc;
+      background: $gradient-top;
+      width: 415px;
+      margin: 20px 20px 0 0;
+      border-radius: 10px;
+      box-shadow: 3px 3px 6px $textShadow1;
+   }
+   .goalTextForm{
+      width: 330px;
+      margin: 30px 30px 30px 35px;
+      // flex-direction: column;
+   }
+   .goalSpace{
+      width: 330px;
+      height: 15px;
+      border-color: $bgc;
+   }
+   .goalSpace2{
+      width: 116px;
+   }
+   
+   .goalDateBox {
+      display: inline-flex;
+   }
+   .dateTarget{
+      display: flex;
+      background-color: $bgInputColor; 
+      width: 100px;
+      height: 30px;
+      margin-right: 10px;
+      justify-content: center;
+      align-items: center;
+      // padding-left: 8px;
+      border-radius: 5px;
+      font-size: 17px;
+   }
+   .goalCom{
+      display: flex;
+      background-color: $bgInputColor; 
+      width: 100px;
+      height: 30px;
+      align-items: center;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-radius: 5px;
+      font-size: 17px;
+   }
+   
+   .goalTitle{
+      background-color: $bgInputColor;
+      border-radius: 5px;
+      font-size: 22px;
+      font-weight: bold;
+      width: 328px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      padding-left: 8px;
+   }
+   .goalContent{
+      background-color: $bgInputColor;
+      width: 320px;
+   }
+   
+   .goalButton{
+      width: 140px;
+      margin-top: -8px;
+      margin-bottom: -8px;
+      margin-right: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+      background-color: $bgc;
+      background: $gradient-top;
+      border:none;
+      color: whitesmoke;
+      text-shadow: 2px 2px 4px $textShadow1;
+      font-family: 'Permanent Marker';
+      font-size: 34px;
+   }
+   
+   .goalButton:hover {
+      color: $hoverColor1;
+   }
+   .buttonBox{
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      margin-right: 5px;
+   }
+}
+
+@media all and (max-width: 580px) {
+   .goalMainContainer{
+      display: flex;
+      width: 98%;
+      flex-direction: column;
+      align-self: center;
+      margin-top: 20px;
+   }
+   .goalsHeader{
+      width: 300px;
+      font-size:24px;
+      margin-right: 10px;
+   }
+   .goalHeaderText{
+      margin-right: 60px;
+   }
+   .addGoalButtonBox{
+      width: 80px;
+      justify-content: flex-start;
+      margin-right: 10px;
+      
+   }
+   .editGoalNav{
+      font-size: 19px;
+
+   }
+   .goalBox{
+      display: flex;
+      flex: 1;
+      flex-shrink: 1;
+      flex-direction: column;
+      width: 330px;
+      align-items: center;
+   }
+   .goalTemp{
+      display: flex;
+      align-items: center;
+      background-color: $bgc;
+      background: $gradient-top;
+      width: 290px;
+      margin: 20px 20px 0 0;
+   }
+   .goalTextForm{
+      width: 270px;
+      margin: 30px;
+      align-items: center;
+   }
+   .goalSpace{
+      width: 215px;
+      height: 12px;
+   }
+   .goalSpace2{
+      width: 46px;
+   }
+   
+   .goalDateBox {
+      display: inline-flex;
+   }
+   .dateTarget{
+      display: flex;
+      background-color: $bgInputColor; 
+      width: 80px;
+      height: 25px;
+      font-size: 14px;
+   }
+   .goalCom{
+      display: flex;
+      background-color: $bgInputColor; 
+      width: 85px;
+      height: 25px;
+      align-items: center;
+      font-size: 15px;
+   }
+   
+   .goalTitle{
+      background-color: $bgInputColor;
+      border-radius: 5px;
+      font-size: 19px;
+      font-weight: bold;
+      width: 223px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      padding-left: 8px;
+   }
+   .goalContent{
+      background-color: $bgInputColor;
+      width: 215px;
+   }
+   
+   .goalButton{
+      width: 120px;
+      margin-top: -8px;
+      margin-bottom: -8px;
+      margin-right: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+      font-size: 18px;
+   }
+   
+   
+}

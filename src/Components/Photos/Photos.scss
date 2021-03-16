@@ -108,3 +108,179 @@ $gradient-bottom: linear-gradient(180deg, #1F4E73ff, #1E4F76ff, #1C5079ff, #1B51
       width: 100%;
       height: auto;
 }
+
+
+
+@media all and (min-width: 601px) and (max-width:1000px) {
+   .photoContainer{
+      display: flex;
+      width: 98%;
+      flex-direction: column;
+      align-self: center;
+   }
+   .photoHeader{
+      font-family: $logofont;
+   flex: 2;
+   display: flex;
+	justify-self: center;
+   font-size:30px;
+   }
+   .photoHeaderText{
+      justify-content: flex-start;
+      flex: 2;
+      margin-right: 150px;
+   }
+   
+   .addPhotoButtonBox{
+      flex: auto;
+      justify-content: flex-start;
+      margin-right: 20px;
+   }
+   
+   .addPhotoNav{
+      font-size: 22px;
+   }
+   .photoMapBox{
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      align-items: center;
+   }
+   .photoFormBox{
+      width: 330px;
+      margin-top: 20px;
+   }
+   
+   .photoSpace{
+      width: 330px;
+      height: 20px;
+   }
+   .photoSpace2{
+      width: 320px;
+      height: 30px;
+      border-color: $bgc;
+   }
+   .awsPhoto{
+      display: flex;
+      flex-direction: column;
+      width: 355px;
+      margin: 20px 20px 0 0;
+   }
+   .photoDate{
+      display: flex;
+      align-items: center;
+      margin-left: 30px;
+      background-color: $bgInputColor; 
+      width: 100px;
+      height: 30px;
+      padding-left: 8px;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: 500;
+   }
+   .photoLinkBox{
+      background-color: $bgInputColor;
+      display: flex;
+      flex: 2;
+      margin-left: 60px;
+      width: 220px;
+      height: 220px;
+      padding: 6px 8px;
+      border-radius: 5px;
+   }
+   .imgPhoto{
+      flex-shrink: 1;
+      align-items: center;
+      border-radius: 8px;
+         width: 100%;
+         height: auto;
+   }
+}
+
+
+   @media all and (max-width: 580px) {
+      .photoContainer{
+         display: flex;
+         width: 98%;
+         flex-direction: column;
+         align-self: center;
+         margin-top: 20px;
+      }
+      .photoHeader{
+         font-family: $logofont;
+      flex: 2;
+      display: flex;
+      justify-self: center;
+      font-size:24px;
+      }
+      .photoHeaderText{
+         justify-content: flex-start;
+         flex: 2;
+         margin-right: 110px;
+      }
+      
+      .addPhotoButtonBox{
+         flex: auto;
+         justify-content: flex-start;
+         margin-right: 20px;
+      }
+      
+      .addPhotoNav{
+         font-size: 18px;
+      }
+      .photoMapBox{
+         display: flex;
+         flex-direction: column;
+         flex: 1;
+         align-items: center;
+      }
+      .photoFormBox{
+         width: 300px;
+         margin-top: 20px;
+      }
+      
+      .photoSpace{
+         width: 280px;
+         height: 20px;
+      }
+      .photoSpace2{
+         width: 280px;
+         height: 30px;
+         border-color: $bgc;
+      }
+      .awsPhoto{
+         display: flex;
+         flex-direction: column;
+         width: 270px;
+         margin: 20px 20px 0 0;
+      }
+      .photoDate{
+         display: flex;
+         align-items: center;
+         margin-left: 30px;
+         background-color: $bgInputColor; 
+         width: 100px;
+         height: 30px;
+         padding-left: 8px;
+         border-radius: 5px;
+         font-size: 18px;
+         font-weight: 500;
+      }
+      .photoLinkBox{
+         background-color: $bgInputColor;
+         display: flex;
+         flex: 2;
+         margin-left: 40px;
+         width: 180px;
+         height: 180px;
+         padding: 6px 8px;
+         border-radius: 5px;
+      }
+      .imgPhoto{
+         flex-shrink: 1;
+         align-items: center;
+         border-radius: 8px;
+            width: 100%;
+            height: auto;
+      }
+}

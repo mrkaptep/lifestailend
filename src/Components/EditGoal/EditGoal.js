@@ -14,6 +14,7 @@ const EditGoal = (props) => {
    const {user} = useContext(AuthContext)
    const {push} = useHistory();
 
+   
    useEffect (async() =>{
       const goal = await getGoal(props.match.params.goal_id)
       setTitle(goal.title)
@@ -29,10 +30,10 @@ const EditGoal = (props) => {
          </div>
          <div className="editGoalTemp">
             <div className="editTextForm">
-               <div className="space"></div>
+               <div className="editGoalSpace"></div>
                <div className="editGoalDateBox">
                   <span className="editGoalCom">Target Date</span>
-                  <span className="space2"></span>
+                  <span className="editGoalSpace2"></span>
                   <div className="editDatePickerbox">
                      <DatePicker 
                         placeholder="Target Date"
@@ -43,16 +44,16 @@ const EditGoal = (props) => {
                         />
                   </div>
                </div>
-               <div className="space"></div>
+               <div className="editGoalSpace"></div>
                <div className="editGoalTitlebox">
-                  <textarea
+                  <input
                      className="editGoalTitle"
                      placeholder="Goal Title"
                      value={title}
                      onChange={(e) => setTitle(e.target.value)}
                   />
                </div>
-               <div className="space"></div>
+               <div className="editGoalSpace"></div>
                <div className="contentbox">
                   <textarea
                      className="editGoalContent"
@@ -62,7 +63,7 @@ const EditGoal = (props) => {
                      onChange={(e) => setContent(e.target.value)}
                   />   
                </div>
-               <div className="space"></div>
+               <div className="editGoalSpace"></div>
                
                <button 
                   className="editGoalButton"

@@ -21,8 +21,8 @@ const AuthRegister = (props) => {
 
    return (
       <div className="container">
-         <div className="form-box">
-            <div className="body-form">
+         <div className="regFormBox">
+            <div className="regBodyForm">
                <div className="login-group">
                   <div className="fa-text"><FontAwesomeIcon icon={["fa", "user"]}/>
                   </div>
@@ -32,7 +32,7 @@ const AuthRegister = (props) => {
                      onChange={(e) => setUsername(e.target.value)}
                   />
                </div>
-               <div className="login-group">
+               <div className="registerGroup">
                   <div className="fa-text"><FontAwesomeIcon icon={["fa", "lock"]}/>
                   </div>
                   <input
@@ -42,7 +42,7 @@ const AuthRegister = (props) => {
                      onChange={(e) => setPassword(e.target.value)}
                   />
                </div>
-               <div className="login-group">
+               <div className="registerGroup">
                   <div className="fa-text"><FontAwesomeIcon icon={["fa", "envelope"]}/>
                   </div>  
                   <input
@@ -51,8 +51,10 @@ const AuthRegister = (props) => {
                      onChange={(e) => setEmail(e.target.value)}
                   />
                </div>
-               <div className="buttonGroup">
-                  <button className="register" onClick={() =>register({username, password, email})}>Register</button>
+               <div className="registerButtonGroup">
+                  <button 
+                  className="register" 
+                  onClick={() =>register({username, password, email})}>Register</button>
                </div>
             </div>
          </div>

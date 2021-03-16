@@ -20,10 +20,10 @@ const Auth = (props) => {
     
         return (
             <div className="container">
-                <div className="form-box">
-                    <div className="body-form">
+                <div className="loginFormBox">
+                    <div className="loginBodyForm">
                     
-                        <div className="login-group">
+                        <div className="loginGroup">
                             <div className="fa-text"><FontAwesomeIcon icon={["fa", "user"]}/></div>
                             <input
                                 placeholder="Enter Username"
@@ -31,7 +31,7 @@ const Auth = (props) => {
                                 onChange={(e) => setUsername(e.target.value)}
                             />
                         </div>
-                        <div className="login-group">
+                        <div className="loginGroup">
                             <div className="fa-text"><FontAwesomeIcon icon={["fa", "lock"]}/></div>
                             <input
                                 placeholder="Enter Password"
@@ -40,8 +40,10 @@ const Auth = (props) => {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
-                        <div className="buttonGroup">
-                            <button onClick={() =>login({username, password, email})}>Login</button>
+                        <div className="lognButtonGroup">
+                            <button 
+                            className="loginButton"
+                            onClick={() =>login({username, password, email})}>Login</button>
                         </div>
                     </div>
                 </div>

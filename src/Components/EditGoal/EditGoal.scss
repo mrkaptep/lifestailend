@@ -22,7 +22,7 @@ $gradient-radial: radial-gradient(#1F4E73ff, #1E4F76ff, #1C5079ff, #1B517Dff, #1
    justify-content: flex-start;
 	align-items: flex-start;
    font-size:40px;
-   margin: 30px 0 -24px 10px;
+   margin: 30px 0 14px 10px;
    color: $bgc;
    text-shadow: 2px 2px 4px $textShawdow2;
 }
@@ -46,7 +46,7 @@ $gradient-radial: radial-gradient(#1F4E73ff, #1E4F76ff, #1C5079ff, #1B517Dff, #1
    display: flex;
    flex-direction: column;
 }
-.space{
+.editGoalSpace{
    width: 480px;
    height: 15px;
    border-color: $bgcolor2;
@@ -74,7 +74,7 @@ $gradient-radial: radial-gradient(#1F4E73ff, #1E4F76ff, #1C5079ff, #1B517Dff, #1
 .editGoalDateBox {
    display: inline-flex;
 }
-.space2{
+.editGoalSpace2{
    width: 140px;
    border-color: $bgcolor2;
 }
@@ -130,4 +130,322 @@ $gradient-radial: radial-gradient(#1F4E73ff, #1E4F76ff, #1C5079ff, #1B517Dff, #1
 
 .editGoalButton:hover {
    color: $hoverColor1;
+}
+
+@media all and (min-width: 601px) and (max-width:1000px) {
+   .editFormBox{
+      display: flex;
+      width: 98%;
+      flex-direction: column;
+      align-self: center;
+   }
+   
+   .editGoalHeader{
+      font-family: $logofont;
+      flex: 1;
+      justify-content: flex-start;
+      align-items: flex-start;
+      font-size:30px;
+      margin: 30px 0 -24px 10px;
+   }
+   
+   .editGoalTemp{
+      display: flex;
+      align-self: center;
+      width: 415px;
+      justify-content: center;
+      
+      margin: 20px 20px 1px 30px;
+      
+      border-radius: 10px;
+      box-shadow: 3px 3px 6px $textShadow1;
+   }
+   .editTextForm{
+      width: 340px;
+      margin: 30px;
+      display: flex;
+      flex-direction: column;
+   }
+   .editGoalSpace{
+      width: 330px;
+      height: 15px;
+      border-color: $bgcolor2;
+   }
+   .editDate{
+      background-color: $bgInputColor; 
+      width: 100px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      font-size: 17px;
+      padding-left: 8px;
+      border-radius: 5px;
+   }
+   .editGoalCom{
+      background-color: $bgInputColor; 
+      width: 110px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-radius: 5px;
+      font-size: 17px;
+   }
+   .editGoalDateBox {
+      display: inline-flex;
+   }
+   .editGoalSpace2{
+      width: 136px;
+      border-color: $bgcolor2;
+   }
+   .editDatePickerbox{
+      background-color: $bgInputColor; 
+      width: 110px;
+      height: 30px;
+      display: flex;
+      
+      justify-content: center;
+      align-items: center;
+      // padding-left: 8px;
+      border-radius: 5px;
+      font-size: 17px;
+   }
+   .editGoalTitle{
+      background-color: $bgInputColor;
+      border-radius: 5px;
+      width: 328px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      padding-left: 8px;
+   }
+   .editGoalContent{
+      background-color: $bgInputColor;
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      word-wrap: normal;
+      width: 320px;
+      height: auto;
+      padding: 6px 8px;
+      border-radius: 5px;
+      flex: 1;
+   }
+   
+   .editGoalButton{
+      display: flex;
+      margin-top: -2px;
+      margin-bottom: -14px;
+      justify-content: center;
+      align-items: center; 
+      background-color: $bgc;
+      background: $gradient-top;
+      opacity: .9;
+      border:none;
+      color: $bgInputColor;
+      text-shadow: 2px 2px 4px $textShadow1;
+      font-family: 'Permanent Marker';
+      font-size: 34px;
+   }
+   
+
+}
+
+@media all and (max-width: 580px) {
+   .editFormBox{
+      display: flex;
+      width: 98%;
+      flex-direction: column;
+      align-self: center;
+   }
+   
+   .editGoalHeader{
+      font-family: $logofont;
+      flex: 1;
+      justify-content: flex-start;
+      align-items: flex-start;
+      font-size:30px;
+      margin: 30px 0 -24px 10px;
+   }
+   
+   .editGoalTemp{
+      display: flex;
+      align-self: center;
+      width: 415px;
+      justify-content: center;
+      
+      margin: 20px 20px 1px 30px;
+      
+      border-radius: 10px;
+      box-shadow: 3px 3px 6px $textShadow1;
+   }
+   .editTextForm{
+      width: 330px;
+      margin: 30px;
+      display: flex;
+      flex-direction: column;
+   }
+   .editGoalSpace{
+      width: 330px;
+      height: 15px;
+      border-color: $bgcolor2;
+   }
+   .editDate{
+      background-color: $bgInputColor; 
+      width: 100px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+      padding-left: 8px;
+      border-radius: 5px;
+   }
+   .editGoalCom{
+      background-color: $bgInputColor; 
+      width: 120px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-radius: 5px;
+      font-size: 16px;
+   }
+   .editGoalDateBox {
+      display: inline-flex;
+   }
+   .editGoalSpace2{
+      width: 116px;
+      border-color: $bgcolor2;
+   }
+   .editDatePickerbox{
+      background-color: $bgInputColor; 
+      width: 150px;
+      height: 30px;
+      display: flex;
+      font-size: 17px;
+   }
+   .editGoalTitle{
+      background-color: $bgInputColor;
+      border-radius: 5px;
+      width: 328px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      padding-left: 8px;
+   }
+   .editGoalContent{
+      background-color: $bgInputColor;
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      word-wrap: normal;
+      width: 320px;
+      height: auto;
+      padding: 6px 8px;
+      border-radius: 5px;
+      flex: 1;
+   }
+   
+   .editGoalButton{
+      display: flex;
+      margin-top: -2px;
+      margin-bottom: -14px;
+      justify-content: center;
+      align-items: center; 
+      background-color: $bgc;
+      background: $gradient-top;
+      opacity: .9;
+      border:none;
+      color: $bgInputColor;
+      text-shadow: 2px 2px 4px $textShadow1;
+      font-family: 'Permanent Marker';
+      font-size: 34px;
+   }
+}
+
+@media all and (max-width: 580px) {
+   .editFormBox{
+      display: flex;
+      width: 98%;
+      flex-direction: column;
+      align-self: center;
+      margin-top: 20px;
+   }
+   
+   .editGoalHeader{
+      width: 300px;
+      font-size:24px;
+      margin-right: 10px;
+   }
+   
+   .editGoalTemp{
+      display: flex;
+      align-items: center;
+      background-color: $bgc;
+      background: $gradient-top;
+      width: 290px;
+      margin: 20px 20px 0 0;
+   }
+   .editTextForm{
+      width: 270px;
+      margin: 30px;
+      align-items: center;
+   }
+   .editGoalSpace{
+      width: 215px;
+      height: 12px;
+   }
+   .editDate{
+      display: flex;
+      width: 80px;
+      height: 25px;
+      font-size: 14px;
+   }
+   .editGoalCom{
+      display: flex;
+      width: 85px;
+      height: 24px;
+      align-items: center;
+      font-size: 15px;
+   }
+   .editGoalDateBox {
+      display: inline-flex;
+   }
+   .editGoalSpace2{
+      width: 36px;
+   }
+   .editDatePickerbox{
+      background-color: $bgInputColor; 
+      width: 90px;
+      height: 25px;
+      display: flex;
+      font-size: 17px;
+   }
+   .editGoalTitle{
+      background-color: $bgInputColor;
+      border-radius: 5px;
+      font-size: 19px;
+      font-weight: bold;
+      width: 223px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      padding-left: 8px;
+   }
+   .editGoalContent{
+      width: 215px;
+   }
+   
+   .editGoalButton{
+      width: 120px;
+      margin-top: -8px;
+      margin-bottom: -8px;
+      margin-right: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+      font-size: 18px;
+   }
 }

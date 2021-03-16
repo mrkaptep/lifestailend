@@ -24,3 +24,36 @@ $fontMont: 'Montserrat', sans-serif;
 .inputTitle{
    margin-right: 7px;
 }
+
+@media all and (min-width: 601px) and (max-width:1000px) {
+   .familyComp{
+      display: flex;
+      flex-direction: column;
+      flex: auto;
+      flex-shrink: 2;
+      margin: 20px;
+      height: auto;
+   }
+
+}
+@media all and (max-width: 580px) {
+   .familyComp{
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      flex-shrink: 1;
+      margin: 20px;
+      height: auto;
+}
+.familyText{
+   font-family: $fontMont;
+   font-size: 14px;
+   margin-top: 15px;
+}
+.inputText{
+   font-family: $fontMont;
+   font-size: 10px;
+   font-weight: bold;
+   margin-top: 10px; 
+}
+}

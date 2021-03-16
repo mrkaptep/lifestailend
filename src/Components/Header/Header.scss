@@ -79,3 +79,72 @@ $hoverColor1: silver;
    margin-right: 13px;
 }
 
+@media all and (min-width: 601px) and (max-width:1000px) {
+   .header {
+      display: flex;
+      width: 100%;
+      height: 10vh;
+      align-items: center;
+      background-color: $bgc;
+      background: $gradient-top;
+   
+   }
+   .loginVisibiltyLocation{
+      position: fixed;
+      top: 8%;
+      left: 52vw;
+   }
+   
+   .regVisibiltyLocation{
+      position: fixed;
+      top: 8%;
+      left: 58vw;
+   }
+}
+
+@media all and (max-width:580px) {
+   .header {
+      display: flex;
+      width: 100%;
+      height: 10vh;
+      align-items: center;
+      background-color: $bgc;
+      background: $gradient-top;
+   
+   }
+   .logo {
+      font-family: $logofont;
+      align-self: center;
+      font-size:24px;
+      margin-left: 20px;
+      color: $bgInputColor;
+      text-shadow: 2px 2px 4px $textShadow1;
+   }
+   .buttonAuth{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center; 
+      background-color: $bgc;
+      border:none;
+      color: $bgInputColor;
+      text-shadow: 2px 2px 4px $textShadow1;
+      font-family: 'Permanent Marker';
+      font-size: 14px;
+      margin-right: 13px;
+   }
+
+   .loginVisibiltyLocation{
+      position: fixed;
+      flex-shrink: 1;
+      top: 8%;
+      left: 14vw;
+   }
+   
+   .regVisibiltyLocation{
+      position: fixed;
+      flex-shrink: 1;
+      top: 8%;
+      left: 20vw;
+   }
+
+}

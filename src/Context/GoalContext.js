@@ -32,7 +32,7 @@ export const GoalProvider=(props) => {
       .post("/api/goal", body)
       .then((res) => setGoals(res.data))
       .catch(() => console.log("there was an error"))
-      console.log(goal)
+      console.log('goalContext--', goal)
    }
 
    const deleteGoal = (goal_id) => {

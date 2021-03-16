@@ -3,6 +3,9 @@ import {AuthContext} from '../../Context/AuthContext';
 import {Bar} from 'react-chartjs-2';
 import './FamilyTime.scss'
 
+//react chart js has a resize bug. When you resize browser the height grows indefinetly. 
+//https://github.com/reactchartjs/react-chartjs-2/issues/334
+
 
 const FamilyTime = (props) => {
    const {user} = useContext(AuthContext)

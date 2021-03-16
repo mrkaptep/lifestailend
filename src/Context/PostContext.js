@@ -7,9 +7,10 @@ export const PostProvider=(props) => {
    
 
 
-   const getPosts = () =>{
+   const getPosts = (search) =>{
+      const fullSearch = '?search='+ search
       axios
-      .get("/api/posts")
+      .get(`/api/posts${search ? fullSearch: ''}`)
       .then((res) => {
          setPost(res.data)
       })

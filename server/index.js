@@ -49,6 +49,35 @@ app.use(
         console.log('db connected');
         app.listen(SERVER_PORT, () => {
             console.log(`Listening on port: ${SERVER_PORT}`);
+            db
+            .query(
+                `SELECT 
+                tailend_posts.post_id,
+                tailend_posts.author_id,
+                tailend_posts.date_created,
+                tailend_posts.title,
+                tailend_posts.content,
+                post_tags.post_tag_id,
+                post_tags.tag_id,
+                tailend_tags.tag
+                FROM tailend_posts
+                JOIN post_tags on tailend_posts.post_id = post_tags.post_id
+                JOIN tailend_tags on tailend_tags.tag_id = post_tags.tag_id
+                WHERE tailend_posts.title LIKE 'F%'
+                ORDER BY tailend_posts.post_id DESC `,
+                [],
+                {
+                    decompose: {
+                        pk: 'post_id',
+                        columns: ['post_id','author_id','date_created','title','content'],
+                        tags: {
+                            pk: 'tag_id',
+                            columns: { post_tag_id: 'post_tag_id', tag_id: 'tag_id', tag: 'tag' }
+                        }
+                    }
+                }
+            )
+            .then((abc)=>console.log(abc))
         });
     }).catch((err) => {
         console.log(err)

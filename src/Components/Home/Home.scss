@@ -1,6 +1,6 @@
 $fontYanone: 'Yanone Kaffeesatz', sans-serif;
 $fontMont: 'Montserrat', sans-serif;
-
+ 
 .homeContainer{
 	overflow: auto;
 }
@@ -9,7 +9,7 @@ $fontMont: 'Montserrat', sans-serif;
 }
 .imgBox{
 	flex: 1;
-	height: 420px;
+	height: auto;
 	margin-left: 20px;
 	display: flex;
 }
@@ -42,6 +42,8 @@ $fontMont: 'Montserrat', sans-serif;
 }
 .box{
 	display: inline-flex;
+	flex: 1;
+	flex-shrink: 1;
 	margin-left: 20px;
 }
 .box2{
@@ -71,7 +73,7 @@ $fontMont: 'Montserrat', sans-serif;
    margin-left: 20px;
 }
 .textContainer{
-	flex: 2;
+	flex: 1;
 	display: flex;
 	flex-direction: column;
 	margin: 40px 10px 0 20px;
@@ -106,4 +108,105 @@ font-style: italic;
 .takeawayText {
 	margin-bottom: 10px;
 	margin-left: 10px;
+}
+
+@media all and (min-width: 601px) and (max-width:1000px) {
+	.homeContainer{
+		display: flex;
+		width: 100%;
+		align-items: center;
+		flex-direction: column;
+		height: auto;
+		padding-bottom: 30px;
+	}
+	.imgBox{
+		height: auto;
+		flex: 2;
+		flex-shrink: 1;
+	}
+	.img{
+		height: 150px;
+	}
+	.box{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.chartContainer{
+		display: flex;
+		flex-direction: column;
+		height: auto;
+	}
+	.chartContainer2 {
+		display: flex;
+		flex-direction: column;
+		height: auto;
+	}
+	.lifeTailendText{
+		font-size: 24px;
+		margin: 20px;
+	}
+	.lifeTailendText2{
+		font-size: 18px;
+		margin: 20px;
+	}
+	.tailendText{
+		font-size: 22px;
+	}
+	.text {
+		font-size: 14px;
+	}
+	.takeaway{
+		font-size: 18px;
+	}
+}
+@media all and (max-width: 580px) {
+	.homeContainer{
+		display: flex;
+		width: 100%;
+		align-items: center;
+		flex-direction: column;
+		height: auto;
+		padding-bottom: 30px;
+	}
+	.imgBox{
+		height: auto;
+		flex: 2;
+		flex-shrink: 1;
+	}
+	.img{
+		height: 100px;
+	}
+	.box{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.chartContainer{
+		display: flex;
+		flex-direction: column;
+		height: auto;
+	}
+	.chartContainer2 {
+		display: flex;
+		flex-direction: column;
+		height: auto;
+	}
+	.lifeTailendText{
+		font-size: 16px;
+		margin: 20px;
+	}
+	.lifeTailendText2{
+		font-size: 14px;
+		margin: 20px;
+	}
+	.tailendText{
+		font-size: 14px;
+	}
+	.text {
+		font-size: 10px;
+	}
+	.takeaway{
+		font-size: 12px;
+	}
 }

@@ -17,11 +17,11 @@ $gradient-bottom: linear-gradient(180deg, #1F4E73ff, #1E4F76ff, #1C5079ff, #1B51
    flex-direction: column;
    align-self: center;
 }
-
 .postHeader{
    font-family: $logofont;
    flex: 2;
-   display: inline-flex;
+   display: flex;
+   flex-direction: column;
 	justify-self: center;
    font-size:40px;
    margin: 10px 0 10px 20px;
@@ -30,26 +30,34 @@ $gradient-bottom: linear-gradient(180deg, #1F4E73ff, #1E4F76ff, #1C5079ff, #1B51
 }
 .postHeaderText{
    justify-content: flex-start;
-   flex: 2;
-   margin-right: 350px;
+   flex: 1;
+   // margin-right: 350px;
 }
 .addPostButtonBox{
-   flex: auto;
-   justify-content: flex-start;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   flex: 1;
    margin-right: 40px;
    
 }
 .postNav{
-   // justify-content: flex-end;
-	// align-items: flex-start;
+   width: 180px;
    border:none;
    color: $bgc;
    background-color: white;
    text-shadow: 2px 2px 4px $textShawdow2;
    font-family: 'Permanent Marker';
    font-size: 28px;
-   // margin-left: 15px;
+   margin-left: 20px;
+   margin-right: 20px;
 }
+.searchInput{
+   width: 180px;
+   margin-top: 10px;
+   margin-right: 80px;
+}
+
 .postBox{
    display: flex;
    flex-direction: column;
@@ -67,17 +75,17 @@ $gradient-bottom: linear-gradient(180deg, #1F4E73ff, #1E4F76ff, #1C5079ff, #1B51
    border-radius: 10px;
    box-shadow: 3px 3px 6px $textShadow1;
 }
-.textForm{
+.postTextForm{
    width: 430px;
    margin: 40px;
 }
 
-.space{
+.postSpace{
    width: 430px;
    height: 12px;
    border-color: $bgc;
 }
-.space2{
+.postSpace2{
    width: 430px;
    height: 6px;
    border-color: $bgc;
@@ -150,6 +158,264 @@ $gradient-bottom: linear-gradient(180deg, #1F4E73ff, #1E4F76ff, #1C5079ff, #1B51
    font-size: 34px;
 }
 
-.button:hover {
+.postButton:hover {
    color: $hoverColor1;
+}
+
+@media all and (min-width: 601px) and (max-width:1000px) {
+
+.postMainContainer{
+   display: flex;
+   width: 98%;
+   flex-direction: column;
+   align-self: center;
+   
+}
+
+.postHeader{
+   font-family: $logofont;
+   flex-direction: column;
+   flex: 2;
+   display: flex;
+	justify-self: center;
+   font-size:30px;
+}
+.postHeaderText{
+   justify-content: flex-start;
+   flex: 2;
+   margin-right: 250px;
+}
+.addPostButtonBox{
+   flex: auto;
+   flex-direction: row;
+   justify-content: flex-start;
+   margin-right: 20px;
+   
+}
+.postNav{
+   font-size: 22px;
+   margin-right: 105px;
+   margin-left: 35px;
+}
+
+.postTemp{
+   display: flex;
+   align-self: center;
+   // overflow-y: auto;
+   background-color: $bgc;
+   background: $gradient-top;
+   width: 415px;
+   margin: 20px 20px 0 10px;
+}
+.postTextForm{
+   width: 330px;
+   margin: 40px;
+}
+
+.postSpace{
+   width: 330px;
+   height: 12px;
+   border-color: $bgc;
+}
+.postSpace2{
+   width: 330px;
+   height: 6px;
+   border-color: $bgc;
+}
+
+.date{
+   display: flex;
+   background-color: $bgInputColor; 
+   width: 150px;
+   height: 30px;
+   align-items: center;
+   padding-left: 8px;
+   border-radius: 5px;
+   font-size: 18px;
+   font-weight: 500;
+}
+.postTitle{
+   background-color: $bgInputColor;
+   border-radius: 5px;
+   width: 328px;
+   height: 32px;
+   align-items: center;
+   padding-left: 8px;
+   font-size: 22px;
+   font-weight: bold;
+}
+.tags{
+   background-color: $bgInputColor;
+   border-radius: 5px;
+   width: 328px;
+   height: 34px;
+   padding-left: 8px;
+   display: flex;
+   align-items: center;
+   
+}
+.tagme{
+   background-color: $bgc;
+   background: $gradient-top;
+   box-shadow: 3px 3px 6px $textShawdow2;
+   font-family: $fontMont;
+   border-radius: 5px;
+   margin-left: 8px;
+   padding: 4px;
+   height: 28px;
+   font-weight: 600;
+   color: $bgInputColor;
+}
+.postContent{
+   background-color: $bgInputColor;
+   width: 320px;
+   height: auto;
+   padding: 6px 8px;
+   border-radius: 5px;
+
+}
+.postButton{
+   display: flex;
+   margin-top: -2px;
+   margin-bottom: -14px;
+
+   justify-content: center;
+	align-items: center; 
+   font-size: 34px;
+}
+
+}
+
+
+@media all and (max-width: 580px) {
+   .postMainContainer{
+      display: flex;
+      width: 98%;
+      flex-direction: column;
+      align-self: center;
+      margin-top: 10px;
+      // margin-left: 15px;
+   }
+   
+   .postHeader{
+      font-family: $logofont;
+      width: 300px;
+      font-size:24px;
+      margin: 15px 0 10px 0;
+
+   }
+   .postHeaderText{
+      margin-right: 60px;
+   }
+   .addPostButtonBox{
+      width: 200px;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      
+   }
+   .postNav{
+      font-size: 19px;
+      margin-right: 10px;
+   margin-left: 2px;
+   }
+   .searchInput{
+      margin-left: 10px;
+   }
+   .postBox{
+      display: flex;
+      flex: 1;
+      flex-shrink: 1;
+      flex-direction: column;
+      width: 330px;
+      align-items: center;
+   }
+   .postTemp{
+      display: flex;
+      align-items: center;
+      width: 290px;
+      margin: 20px 20px 0 0;
+   }
+   .postTextForm{
+      width: 270px;
+      margin: 30px;
+      align-items: center;
+   }
+   
+   .postSpace{
+      width: 215px;
+      height: 12px;
+   }
+   .postSpace2{
+      width: 215px;
+      height: 6px;
+      border-color: $bgc;
+   }
+   
+   .date{
+      display: flex;
+      background-color: $bgInputColor; 
+      width: 90px;
+      height: 25px;
+      align-items: center;
+      padding-left: 8px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: 500;
+   }
+   .postTitle{
+      width: 213px;
+      height: 28px;
+      align-items: center;
+      padding-left: 8px;
+      font-size: 19px;
+      font-weight: bold;
+   }
+   .tags{
+      background-color: $bgInputColor;
+      border-radius: 5px;
+      width: 213px;
+      height: 34px;
+      padding-left: 8px;
+      display: flex;
+      align-items: center;
+      
+   }
+   .tagme{
+      background-color: $bgc;
+      background: $gradient-top;
+      box-shadow: 3px 3px 6px $textShawdow2;
+      font-family: $fontMont;
+      font-size: 16px;
+      border-radius: 5px;
+      margin-left: 8px;
+      padding: 4px;
+      height: 28px;
+      font-weight: 600;
+      color: $bgInputColor;
+   }
+   .postContent{
+      background-color: $bgInputColor;
+      width: 205px;
+      height: auto;
+      padding: 6px 8px;
+      border-radius: 5px;
+      font-size: 14px;
+   
+   }
+   .postButton{
+      display: flex;
+      margin-top: -2px;
+      margin-bottom: -14px;
+      justify-content: center;
+      align-items: center; 
+      background-color: $bgc;
+      background: $gradient-top;
+      opacity: .9;
+      border:none;
+      color: $bgInputColor;
+      text-shadow: 2px 2px 4px $textShadow1;
+      font-family: 'Permanent Marker';
+      font-size: 18px;
+   }
 }

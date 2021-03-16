@@ -2,6 +2,9 @@ import React, {useState, useEffect} from 'react';
 import {Bar} from 'react-chartjs-2';
 import './Months.scss'
 
+//react chart js has a resize bug. When you resize browser the height grows indefinetly. 
+//https://github.com/reactchartjs/react-chartjs-2/issues/334
+
 
 const Months = (props) => {
    const [theAge, setTheAge] = useState(34)

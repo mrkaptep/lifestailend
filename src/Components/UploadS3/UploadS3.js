@@ -43,19 +43,22 @@ const UploadS3 = (props) => {
          // props.changeImage(url);
          console.log('upload response',res);
          axios
-         .post("/api/photo", ({photo_link:url}))
+         .post("/api/photo", ({photo_link:url})).then(()=>{
+
+            push('/Main/Picture')
+         })
+
       })
       .catch(err => {
          console.log(err);
       });
-      push('/Main/Picture')
    };
 
    
    return (
 
 
-      <div className="aws3">
+      <div className="uploadAws3">
          <div className="photoAddSpace2"></div>
          <div className="addPicture">
             <div className="photoAddSpace2"></div>

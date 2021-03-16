@@ -18,13 +18,14 @@ library.add(
 
 const Post = (props) => {
    const {post, setPost, getPosts, deletePost, addPost} = useContext(PostContext)
-   const {push} = useHistory() 
+   const {push} = useHistory()
+   const [search, setSearch] =useState('')
    
    useEffect(() => {
       getPosts()
    }, [])
 
-   console.log (post)
+   // console.log ('post comp----', post.tags.post_tag-id)
 
    // const postFilter = (post, string) => {
    //    filterByValue(post, 'plop')
@@ -38,32 +39,43 @@ const Post = (props) => {
                Posts
             </div>
             <div className="addPostButtonBox">
-            <button
+               <button
                      className="postNav"
                      onClick={() => {
                         push(`/Main/Post/Edit`)}
                      }
                   >
                      <FontAwesomeIcon icon={["fa", "plus"]}/>  New Post
-                  </button>
+               </button>
+               {/* <div className="searchBox"> */}
+                  {/* <span className="searchText">Search</span> */}
+                  <input 
+                  className="searchInput"
+                     value={search}
+                     placeholder="Search"
+                     onChange={(e) => {
+                        setSearch(e.target.value)
+                        getPosts(e.target.value)
+                     }}
+                  />
+               {/* </div> */}
             </div>
-
          </div>
          <div className='postBox'>
             {post.map((post, index) => {
                const postDate = new Date (post.date_created)
                return(
                   <div className="postTemp" key={index}>
-                     <div className='textForm'>
+                     <div className='postTextForm'>
                         {/* <div className="postId">Post ID: {post.post_id} 
                         </div>
                         <div className="space"></div> */}
                         <div className="date">{postDate.getMonth()}/{postDate.getDate()}/{postDate.getFullYear()} 
                         </div>
-                        <div className="space"></div>
+                        <div className="postSpace"></div>
                         <div className="postTitle">{post.title} 
                         </div>
-                        <div className="space"></div>
+                        <div className="postSpace"></div>
                         <div className="tags">
                            {post.tags.map((tag, index)=>{
                               return (
@@ -74,11 +86,11 @@ const Post = (props) => {
                               )
                            })}
                         </div>
-                        <div className="space"></div>
+                        <div className="postSpace"></div>
                         <div className="postContent">
                            {post.content}
                         </div>
-                        <div className="space2"></div>
+                        <div className="postSpace2"></div>
                         <button
                            className="postButton"
                            onClick={() => deletePost(post.post_id)}
