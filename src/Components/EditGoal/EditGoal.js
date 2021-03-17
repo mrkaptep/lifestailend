@@ -14,12 +14,14 @@ const EditGoal = (props) => {
    const {user} = useContext(AuthContext)
    const {push} = useHistory();
 
-   
+
    useEffect (async() =>{
-      const goal = await getGoal(props.match.params.goal_id)
-      setTitle(goal.title)
-      setContent(goal.content)
-      setTimeTable(new Date(goal.time_table))
+      if(props.match.params.goal_id){
+         const goal = await getGoal(props.match.params.goal_id)
+         setTitle(goal.title)
+         setContent(goal.content)
+         setTimeTable(new Date(goal.time_table))
+      }
    }, [])
 
  

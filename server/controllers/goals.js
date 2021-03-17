@@ -20,13 +20,13 @@ module.exports = {
 
    getGoals: (req, res) => {
       const db = req.app.get('db')
-      db.goals.get_goals().then((goals) => {
+      const { id } = req.session.user;
+      db.goals.get_goals(id).then((goals) => {
          res.status(200).send(goals)
       })
    },
 
    getGoal: (req ,res) => {
-      console.log('get goal ctrl-------', req.params.id)
       req.app.get('db').goals.get_goal(req.params.id)
       .then((goals) => {
          res.status(200).send(goals)

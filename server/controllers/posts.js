@@ -49,13 +49,14 @@ module.exports = {
       }
    },
 
-   readPost: (req, res) => {
-      req.app.get('db').post.read_post(req.params.id)
-      .then(post => post[0] ? res.status(200).send(post[0]) : res.status(200).send({}))
-   },
+   // readPost: (req, res) => {
+   //    req.app.get('db').post.read_post(req.params.id)
+   //    .then(post => post[0] ? res.status(200).send(post[0]) : res.status(200).send({}))
+   // },
 
    getPosts: (req, res) => {
       const db = req.app.get('db')
+      const { id } = req.session.user;
       const searchString = `WHERE tailend_posts.title LIKE '${req.query.search}%'`
       db.query(
          `SELECT 
@@ -71,6 +72,7 @@ module.exports = {
          JOIN post_tags on tailend_posts.post_id = post_tags.post_id
          JOIN tailend_tags on tailend_tags.tag_id = post_tags.tag_id
          ${req.query?.search ? searchString: ''}
+         AND tailend_posts.author_id = (${id})
          ORDER BY tailend_posts.post_id DESC `,
          [],
          {

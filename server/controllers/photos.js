@@ -19,7 +19,8 @@ module.exports = {
 
    getPhotos: (req, res) => {
       const db = req.app.get('db')
-      db.photo.get_photos().then((photos) => {
+      const { id } = req.session.user;
+      db.photo.get_photos(id).then((photos) => {
          res.status(200).send(photos)
       })
    },

@@ -1,3 +1,4 @@
 SELECT * 
 FROM tailend_goals
-ORDER BY time_table ASC;
+WHERE author_id = $1
+ORDER BY time_table ASC
